@@ -186,4 +186,3 @@ def ideal_setoid (I : Set R) (hI : IsIdeal I) : Setoid R where
 -- Constructs the quotient type using the setoid
 def QuotientRing (I : Set R) (hI : IsIdeal I) : Type :=
   Quotient (ideal_setoid I hI)
--- Blu blu blu

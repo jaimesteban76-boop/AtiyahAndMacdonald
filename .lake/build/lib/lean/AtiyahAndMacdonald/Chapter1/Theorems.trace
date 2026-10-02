@@ -1,0 +1,38 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["94a6a18b09131a68.olean"],
+  "m": false,
+  "i": "45e9e730177a9152.ilean",
+  "c": "6b96a61d0721d5ac.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter1\\Theorems.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter1\\Theorems.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:6:8: declaration uses `sorry`",
+   "level": "warning"}],
+ "inputs":
+ [["deps",
+   [["AtiyahAndMacdonald/AtiyahAndMacdonald:extraDep",
+     [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["AtiyahAndMacdonald.Chapter1.Definitions transitive imports (legacy)",
+       "80f33ebdd955ae81"],
+      ["AtiyahAndMacdonald.Chapter1.Definitions:importAllArts",
+       "347274a7bb5f4cd3"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
+   "6e1b3f3248ad81dc"],
+  ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean",
+   "2f65d5ee5314bb8e"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: AtiyahAndMacdonald.Chapter1.Theorems", "2d919134ffe11f28"],
+  ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "9d5c0de676b86a33"}
