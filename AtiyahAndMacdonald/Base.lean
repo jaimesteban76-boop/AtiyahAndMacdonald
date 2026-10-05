@@ -186,3 +186,83 @@ def ideal_setoid (I : Set R) (hI : IsIdeal I) : Setoid R where
 -- Constructs the quotient type using the setoid
 def QuotientRing (I : Set R) (hI : IsIdeal I) : Type :=
   Quotient (ideal_setoid I hI)
+-- A ring homomorphism from A to B
+structure RingHom (A B : Type) [CommutativeRing A] [CommutativeRing B] where
+  toFun : A → B
+  -- Lean knows `x + y` is in A, and `toFun x + toFun y` is in B
+  map_add : ∀ x y : A, toFun (x + y) = toFun x + toFun y
+  map_mul : ∀ x y : A, toFun (x * y) = toFun x * toFun y
+  map_one : toFun 1 = 1
+
+-- Allows you to use the homomorphism as a normal function `f x`
+instance {A B : Type} [CommutativeRing A] [CommutativeRing B] : CoeFun (RingHom A B) (fun _ => A → B) where
+  coe f := f.toFun
+
+-- Define addition on the quotient ring
+def quotient_add {I : Set R} (hI : IsIdeal I) (a b : QuotientRing I hI) : QuotientRing I hI :=
+  Quotient.liftOn₂ a b
+    (fun x y => Quotient.mk (ideal_setoid I hI) (x + y))
+    (by
+      -- Proof that addition is well-defined independent of the chosen representatives
+      sorry
+    )
+
+-- Define multiplication on the quotient ring
+def quotient_mul {I : Set R} (hI : IsIdeal I) (a b : QuotientRing I hI) : QuotientRing I hI :=
+  Quotient.liftOn₂ a b
+    (fun x y => Quotient.mk (ideal_setoid I hI) (x * y))
+    (by
+      -- Proof that multiplication is well-defined
+      sorry
+    )
+
+-- Finally, bundle this into a CommutativeRing instance
+instance {I : Set R} (hI : IsIdeal I) : CommutativeRing (QuotientRing I hI) where
+  add := quotient_add hI
+  mul := quotient_mul hI
+  zero := Quotient.mk (ideal_setoid I hI) 0
+  one := Quotient.mk (ideal_setoid I hI) 1
+  neg := fun a => Quotient.liftOn a (fun x => Quotient.mk (ideal_setoid I hI) (-x)) (by sorry)
+
+  -- The ring axioms are proven by lifting the properties from the base ring R
+  add_assoc := by sorry
+  add_zero := by sorry
+  add_left_neg := by sorry
+  add_comm := by sorry
+  mul_assoc := by sorry
+  mul_one := by sorry
+  mul_comm := by sorry
+  left_distrib := by sorry
+
+-- 1. Maximal Element of a Family
+-- M is in F, and no other element in F strictly contains M.
+def IsMaximalElement (M : Set R) (F : Set (Set R)) : Prop :=
+  M ∈ F ∧ ∀ P ∈ F, M ⊆ P → P = M
+
+-- 2. The Family of All Ideals
+def IdealsOfR : Set (Set R) :=
+  { I : Set R | IsIdeal I }
+
+-- 3. The Family of Proper Ideals
+def ProperIdealsOfR : Set (Set R) :=
+  { I : Set R | IsIdeal I ∧ ¬((1 : R) ∈ I) }
+
+-- 4. Maximal Ideal
+-- A maximal ideal is a maximal element within the family of proper ideals.
+def IsMaximalIdeal (M : Set R) : Prop :=
+  IsMaximalElement M ProperIdealsOfR
+--Arbitrary intersection of ideals is an ideal--
+theorem Arb_int_ideal (F : Set (Set R)) (hF : F ⊆ IdealsOfR) : IsIdeal ({x : R | ∀ I ∈ F, x ∈ I}) := by
+    constructor
+    intro I hI
+    exact (hF hI).zero_mem
+    intro a b ha hb I hI
+    exact (hF hI).additive_subgroup a b (ha I hI) (hb I hI)
+    intro a b hb I hI
+    apply (hF hI).absorb a
+    obtain ⟨c,⟨d,⟨_,⟨_,_⟩⟩⟩⟩ := hb
+    use c, d
+    and_intros
+    (expose_names; exact Set.mem_of_subset_of_mem (fun ⦃a_1⦄ a => a) left)
+    (expose_names; exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) (left_1 I hI))
+    (expose_names; exact ((fun a => right) ∘ F) I)
