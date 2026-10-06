@@ -14,7 +14,8 @@ theorem prop_1_2_i_iff_iii (h_nonzero : (1 : R) ≠ (0 : R)) : IsField R ↔ ∀
   sorry
 
 --Theorem 1.3 Every Ring has at least one maximal ideal--
-theorem Thm1_3 : ¬ (MaximalIdealsof R= ∅):= by sorry
+theorem Thm1_3 : ¬ (MaximalIdealsof R= ∅):= by
+  sorry
 
 --Corollary 1.4 If a is an ideal of A then there is maximal ideal containing a--
 theorem cor_1_4 (I :Set R)(hI: IsIdeal I ): ∃ M: Set R, IsMaximalIdeal M ∧ I ⊆ M := by
@@ -82,7 +83,7 @@ theorem prop_1_14 (I : Set R) (hI : IsIdeal I) : Radical I = sInter (PrimeIdeals
   exact hx (quotient_comap I hI P) (comap_is_prime_containing I hI P hP)
 
 /-- Proposition 1.15: The set of zero-divisors is the union of r(Ann(x)) for x ≠ 0. -/
-theorem prop_1_15 :{ y : R | IsZeroDivisor y } = { y : R | ∃ x : R, x ≠ (0 : R) ∧ y ∈ Radical (Annihilator x) } := by
+theorem prop_1_15 :{ y : R | IsZeroDivisor y } = sUnion {P|∃ x≠0, Radical (Annihilator x) =P } := by
   sorry
 
 /-- Proposition 1.16: Let a, b be ideals in a ring R such that r(a), r(b) are coprime.
