@@ -89,4 +89,19 @@ theorem prop_1_15 :{ y : R | IsZeroDivisor y } = { y : R | ∃ x : R, x ≠ (0 :
     Then a, b are coprime]. -/
 theorem prop_1_16 (I J : Set R) (hI : IsIdeal I) (hJ : IsIdeal J)(h_rad_coprime : AreCoprime (Radical I) (Radical J)) : AreCoprime I J := by
   sorry
--- Proposition 1.17 Extension and Contraction properties--
+
+--Proposition 1.17--
+variable {A B:Type}[CommutativeRing A][CommutativeRing B]
+
+theorem prop_1_17_ia (a: Set A)(ha: IsIdeal a)(f: RingHom A B): (a⊆ ideal_contraction  f (ideal_extension  f a )) := by
+  sorry
+theorem prop_1_17_ib (b: Set B)(hb: IsIdeal b)(f: RingHom A B): ideal_extension  f (ideal_contraction  f b ) ⊆ b:= by
+  sorry
+theorem prop_1_17_iib (b: Set B)(hb: IsIdeal b)(f: RingHom A B): (ideal_contraction f b = ideal_contraction f (ideal_extension f (ideal_contraction f b))):= by
+  sorry
+theorem prop_1_17_iia (a :Set A) (ha: IsIdeal a)(f: RingHom A B) : ideal_extension f (ideal_contraction f (ideal_extension f a))=ideal_extension f a:= by
+  sorry
+theorem characterization_of_contracted_ideals (f:RingHom A B): ContractedIdeals f = {a:Set A | IsIdeal a ∧ ideal_contraction f (ideal_extension f a)=a}:= by
+  sorry
+theorem characterization_of_extended_ideals (f:RingHom A B): ExtendedIdeals f= {b: Set B|IsIdeal b∧ ideal_extension f (ideal_contraction f b)=b}:= by
+  sorry

@@ -3,7 +3,7 @@ import AtiyahAndMacdonald.Base_Quotient
 set_option linter.unusedSimpArgs false
 
 variable {R : Type} [CommutativeRing R]
-
+variable {A B: Type}[CommutativeRing A][CommutativeRing B]
 def IsUnit (x : R) : Prop :=
   ∃ y : R, x * y = 1
 
@@ -30,6 +30,11 @@ def IsIdealFamily (P : ℕ → Set R) (n : ℕ) : Prop :=
 /-- Asserts that the first n sets in the sequence P are prime ideals. -/
 def IsPrimeFamily (P : ℕ → Set R) (n : ℕ) : Prop :=
   ∀ i < n, IsPrimeIdeal (P i)
+def ExtendedIdeals  (f: RingHom A B): (Set (Set B)):=
+{I: Set B | ∃ J:Set A, IsIdeal J ∧ ideal_extension f J=I}
+
+def ContractedIdeals  (f: RingHom A B): (Set (Set A)):=
+{I: Set A | ∃ J:Set B, IsIdeal J ∧ ideal_contraction f J=I}
 ----
 
 def JacobsonRadical (R : Type) [CommutativeRing R] : Set R :=
