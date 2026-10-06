@@ -1,7 +1,7 @@
 {"plugins": [],
  "package": "AtiyahAndMacdonald",
  "options": {},
- "name": "AtiyahAndMacdonald.Chapter1.Definitions",
+ "name": "AtiyahAndMacdonald.Base_Quotient",
  "isModule": false,
  "importArts":
  {"Qq.Typ":
@@ -1564,8 +1564,6 @@
     "C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Classes\\Order.olean.private"],
    ["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Classes\\Order.ir.sig",
     "C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Classes\\Order.ir"]],
-  "AtiyahAndMacdonald.Base_Quotient":
-  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Base_Quotient.olean"]],
   "AtiyahAndMacdonald.Base":
   [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Base.olean"]],
   "Aesop.Util.UnorderedArraySet":

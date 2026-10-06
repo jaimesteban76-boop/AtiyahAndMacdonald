@@ -2,37 +2,91 @@ import AtiyahAndMacdonald.Chapter1.Definitions
 
 variable {R : Type} [CommutativeRing R]
 
-/-- Proposition 1.8: Nilradical is the intersection of all prime ideals -/
-theorem nilradical_eq_inter_prime : Nilradical R = { x : R | ∀ P : Set R, ∀ hP : IsIdeal P, IsPrimeIdeal P hP → x ∈ P } := by
-    sorry
+/-- Proposition 1.2: Let R be a ring ≠ 0. Then the following are equivalent:
+    (i) R is a field;
+    (ii) the only ideals in R are {0} and R;
+    (iii) every homomorphism of R into a non-zero ring B is injective. -/
+
+theorem prop_1_2_i_iff_ii (h_nonzero : (1 : R) ≠ (0 : R)) : IsField R ↔ ∀ I : Set R, IsIdeal I → I = {(0 : R)} ∨ I = ideal_generated_by {(1:R)} := by
+  sorry
+
+theorem prop_1_2_i_iff_iii (h_nonzero : (1 : R) ≠ (0 : R)) : IsField R ↔ ∀ {B : Type} [CommutativeRing B], (1 : B) ≠ (0 : B) → ∀ (f : RingHom R B), Function.Injective f := by
+  sorry
+
+--Theorem 1.3 Every Ring has at least one maximal ideal--
+theorem Thm1_3 : ¬ (MaximalIdealsof R= ∅):= by sorry
+
+--Corollary 1.4 If a is an ideal of A then there is maximal ideal containing a--
+theorem cor_1_4 (I :Set R)(hI: IsIdeal I ): ∃ M: Set R, IsMaximalIdeal M ∧ I ⊆ M := by
+  sorry
+
+--Corllary 1.5--
 theorem non_unit_in_maximal_ideal (x:R) (hx : ¬(IsUnit x)): ∃ M: Set R, x∈ M ∧  IsMaximalIdeal M := by
     sorry
-
-/-- Proposition 1.1: There is a one-to-one order-preserving correspondence between
-    the ideals of R which contain a, and the ideals of R/a[cite: 6]. -/
-theorem prop_1_1_correspondence (I : Set R) (hI : IsIdeal I) : ∃ f : IdealsContaining I → IdealsOfQuotient I hI, Function.Bijective f := by
+--Proposition 1.6 Characterization of a Local Ring--
+/-- Proposition 1.6 i): Let A be a ring and m ≠ (1) an ideal of A such that every
+    x ∈ A - m is a unit in A. Then A is a local ring and m its maximal ideal. -/
+theorem prop_1_6_i (M : Set R) (hM : IsIdeal M) (hM_proper : ¬((1 : R) ∈ M))(h_units : ∀ x : R, x ∉ M → IsUnit x) : IsLocalRing R ∧ (MaximalIdealsof R={M}):= by
   sorry
 
-/-- The kernel of a ring homomorphism is an ideal[cite: 6]. -/
-theorem kernel_is_ideal {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : IsIdeal (kernel f) := by
+/-- Proposition 1.6 ii): Let A be a ring and m a maximal ideal of A, such that every
+    element of 1 + m (i.e., every 1 + x, where x ∈ m) is a unit in A. Then A is a local ring. -/
+theorem prop_1_6_ii (M : Set R) (hM : IsIdeal M) (hM_max : IsMaximalIdeal M) (h_units : ∀ x ∈ M, IsUnit ((1 : R) + x)) : IsLocalRing R := by
+  sorry
+--Proposition 1.7 The nilradical is an ideal and A/R has no nilpotent elements--
+theorem nilradical_is_ideal : IsIdeal (Nilradical R) := by
+  sorry
+theorem A_has_no_nilpotent_elements : Nilradical (QuotientRing (Nilradical R) (nilradical_is_ideal))=∅ := by
   sorry
 
-/-- Proposition 1.10 (i): If ideals are coprime, their product equals their intersection[cite: 6].
-    Stated here for two ideals to match the available set_mul definition. -/
-theorem prop_1_10_i (I J : Set R) (hI : IsIdeal I) (hJ : IsIdeal J)(h_coprime : AreCoprime I J) : ideal_mul I J = I ∩ J := by
+/-- Proposition 1.8: Nilradical is the intersection of all prime ideals -/
+theorem nilradical_eq_inter_prime : Nilradical R = sInter (PrimeIdealsof R) := by
+    sorry
+--Proposition 1.9--
+theorem Prop_1_9 (x : R) :  x ∈ Nilradical R ↔ ∀ y : R, IsUnit (1 + -(x * y)) := by
   sorry
 
-/-- Proposition 1.11 i): Prime avoidance lemma.
-    Let P_1, ..., P_n be prime ideals and let a be an ideal contained in their union.
-    Then a is contained in P_i for some i[cite: 6]. -/
-theorem prop_1_11_i (P : Nat → Set R) (hP : ∀ i, ∃ hp : IsIdeal (P i), IsPrimeIdeal (P i) hp) (n : Nat) (I : Set R) (hI : IsIdeal I) (h_subset : ∀ x ∈ I, ∃ i < n, x ∈ P i) : ∃ i < n, I ⊆ P i := by
+
+--Proposition 1.10 Product Morphism Properties--
+/-- Proposition 1.10 i): If the ideals are pairwise coprime (a_i, a_j coprime for i ≠ j),
+    then their product equals their intersection[cite: 5]. -/
+theorem prop_1_10_i (P : ℕ → Set R) (n : ℕ) (hP : IsIdealFamily P n) : (∀ i < n, ∀ j < n, i ≠ j → AreCoprime (P i) (P j)) → ideal_prod P n = sInter {P j|j<n}:= by
+  sorry
+/-- Proposition 1.10 ii): φ is surjective ↔ a_i, a_j are coprime whenever i ≠ j. -/
+theorem prop_1_10_ii (P : ℕ → Set R) (n : ℕ) (hP : IsIdealFamily P n) :Function.Surjective (phi_prod P n hP) ↔ ∀ i < n, ∀ j < n, i ≠ j → AreCoprime (P i) (P j) := by
   sorry
 
-/-- Proposition 1.15: The set of zero-divisors is the union of r(Ann(x)) for x ≠ 0[cite: 6]. -/
+/-- Proposition 1.10 iii): φ is bijective ↔ a_i, a_j are coprime whenever i ≠ j
+    and the intersection ⋂ a_i = (0). -/
+theorem prop_1_10_iii (P : ℕ → Set R) (n : ℕ) (hP : IsIdealFamily P n) :
+    Function.Bijective (phi_prod P n hP) ↔
+    (∀ i < n, ∀ j < n, i ≠ j → AreCoprime (P i) (P j)) ∧
+    sInter {P j|j<n} = {(0 : R)} := by
+  sorry
+--Proposition 1.11 i): Prime avoidance lemma. --
+theorem prop_1_11_i (P : Nat → Set R) (n : Nat)(hP: IsPrimeFamily P n) (I : Set R) (hI : IsIdeal I) (h_subset : I⊆ sUnion {P i| i<n}) : ∃ i < n , I ⊆ P i := by
+  sorry
+--Part (ii)--
+theorem prop_1_11_ii (P : Nat → Set R) (n: Nat)(hP : IsIdealFamily P n)  (I : Set R) (hI : IsPrimeIdeal I) (h_subset : sInter {P i| i<n}⊆ I ) : ∃ i < n, P i ⊆ I  := by
+  sorry
+
+/-- Proposition 1.14: The radical of an ideal a is the intersection of the prime ideals which contain a. -/
+theorem prop_1_14 (I : Set R) (hI : IsIdeal I) : Radical I = sInter (PrimeIdealsContaining I) := by
+  ext x
+  rw [mem_radical_iff_quotient_nilradical I hI, nilradical_eq_inter_prime]
+  constructor
+  intro hx J hJ
+  let J_bundled : IdealsContaining I := ⟨J, ⟨hJ.1.2, hJ.2⟩⟩
+  exact mem_of_mem_phi I hI J_bundled x (hx (phi I hI J_bundled).1 (phi_prime I hI J_bundled hJ.1))
+  intro hx P hP
+  exact hx (quotient_comap I hI P) (comap_is_prime_containing I hI P hP)
+
+/-- Proposition 1.15: The set of zero-divisors is the union of r(Ann(x)) for x ≠ 0. -/
 theorem prop_1_15 :{ y : R | IsZeroDivisor y } = { y : R | ∃ x : R, x ≠ (0 : R) ∧ y ∈ Radical (Annihilator x) } := by
   sorry
 
 /-- Proposition 1.16: Let a, b be ideals in a ring R such that r(a), r(b) are coprime.
-    Then a, b are coprime[cite: 6]. -/
+    Then a, b are coprime]. -/
 theorem prop_1_16 (I J : Set R) (hI : IsIdeal I) (hJ : IsIdeal J)(h_rad_coprime : AreCoprime (Radical I) (Radical J)) : AreCoprime I J := by
   sorry
+-- Proposition 1.17 Extension and Contraction properties--

@@ -7,7 +7,10 @@ set_option linter.style.emptyLine false
 set_option linter.flexible false
 set_option linter.style.setOption false
 
-
+def sInter {α} (F: Set (Set α)): (Set α):=
+{x:α | ∀ I: Set α, I∈ F→ x∈ I}
+def sUnion {α} (F: Set (Set α)): (Set α):=
+{x:α | ∃ I: Set α, I∈ F → x∈ I}
 -- Redefining as a class to inherit built-in notation
 class CommutativeRing (R : Type) extends Add R, Mul R, Zero R, One R, Neg R where
   add_assoc : ∀ a b c : R, (a + b) + c = a + (b + c)
@@ -22,7 +25,7 @@ class CommutativeRing (R : Type) extends Add R, Mul R, Zero R, One R, Neg R wher
 export CommutativeRing (add_zero add_left_neg add_comm add_assoc mul_comm left_distrib)
 
 variable {R : Type} [CommutativeRing R]
-theorem ahh (a:R): a*(1:R)=a := by exact CommutativeRing.mul_one a
+
 theorem add_self_cancel (a b : R) (h : a + b = a) : b = 0 := by
   calc
     b = b + 0 := (add_zero b).symm
@@ -133,126 +136,43 @@ theorem Ideal_is_Ring (I:Set R)(hI: IsIdeal I ): (1:R)∈ I↔ ∀r:R, r∈ I :=
   intro hr
   exact Set.mem_preimage.mp (hr 1)
 
-structure IsPrimeIdeal (P : Set R) (hP : IsIdeal P) : Prop where
-  proper : ¬((1 : R) ∈ P)
-  primality : ∀ x y : R, x * y ∈ P → ¬(y ∈ P) → x ∈ P
-
--- Defines the relation a ~ b iff a - b ∈ I
-def ideal_equiv (I : Set R) : R → R → Prop :=
-  fun a b => a + -b ∈ I
-
--- Bundles the relation with proofs that it is an equivalence relation
-def ideal_setoid (I : Set R) (hI : IsIdeal I) : Setoid R where
-  r := ideal_equiv I
-  iseqv := {
-    refl := by
-      intro x
-      rw[ideal_equiv]
-      rw[add_comm]
-      rw[ add_left_neg]
-      exact hI.zero_mem
-    symm := by
-      intro x y
-      simp [ideal_equiv]
-      intro hxy
-      have : -(1:R)*(x+ -y)∈ I := by
-        apply hI.3 (-(1:R))
-        apply h_in_set_mul
-        exact ⟨rfl, hxy⟩
-      rw[left_distrib,neg_one_element, neg_one_element,neg_neg_positive] at this
-      rw [add_comm] at this
-      exact this
-    trans := by
-      intro x y z hxy hyz
-      simp [ideal_equiv] at hxy hyz ⊢
-      have h1 : -(1:R)*(y+ -z)∈ I := by
-        apply hI.3 (-(1:R))
-        apply h_in_set_mul
-        exact ⟨rfl, hyz⟩
-      rw [neg_one_element] at h1
-      have h2 : (x + -y) + -(-(y + -z)) ∈ I := hI.2 (x + -y) (-(y + -z)) hxy h1
-      rw [neg_neg_positive] at h2
-      have heq : (x + -y) + (y + -z) = x + -z := by
-        calc
-          (x + -y) + (y + -z) = x + (-y + (y + -z)) := add_assoc x (-y) (y + -z)
-          _ = x + ((-y + y) + -z) := by rw [(add_assoc (-y) y (-z)).symm]
-          _ = x + (0 + -z) := by rw [add_left_neg y]
-          _ = x + (-z + 0) := by rw [add_comm 0 (-z)]
-          _ = x + -z := by rw [add_zero (-z)]
-      rw [heq] at h2
-      exact h2
-  }
-
--- Constructs the quotient type using the setoid
-def QuotientRing (I : Set R) (hI : IsIdeal I) : Type :=
-  Quotient (ideal_setoid I hI)
--- A ring homomorphism from A to B
-structure RingHom (A B : Type) [CommutativeRing A] [CommutativeRing B] where
-  toFun : A → B
-  -- Lean knows `x + y` is in A, and `toFun x + toFun y` is in B
-  map_add : ∀ x y : A, toFun (x + y) = toFun x + toFun y
-  map_mul : ∀ x y : A, toFun (x * y) = toFun x * toFun y
-  map_one : toFun 1 = 1
-
--- Allows you to use the homomorphism as a normal function `f x`
-instance {A B : Type} [CommutativeRing A] [CommutativeRing B] : CoeFun (RingHom A B) (fun _ => A → B) where
-  coe f := f.toFun
-
--- Define addition on the quotient ring
-def quotient_add {I : Set R} (hI : IsIdeal I) (a b : QuotientRing I hI) : QuotientRing I hI :=
-  Quotient.liftOn₂ a b
-    (fun x y => Quotient.mk (ideal_setoid I hI) (x + y))
-    (by
-      -- Proof that addition is well-defined independent of the chosen representatives
-      sorry
-    )
-
--- Define multiplication on the quotient ring
-def quotient_mul {I : Set R} (hI : IsIdeal I) (a b : QuotientRing I hI) : QuotientRing I hI :=
-  Quotient.liftOn₂ a b
-    (fun x y => Quotient.mk (ideal_setoid I hI) (x * y))
-    (by
-      -- Proof that multiplication is well-defined
-      sorry
-    )
-
--- Finally, bundle this into a CommutativeRing instance
-instance {I : Set R} (hI : IsIdeal I) : CommutativeRing (QuotientRing I hI) where
-  add := quotient_add hI
-  mul := quotient_mul hI
-  zero := Quotient.mk (ideal_setoid I hI) 0
-  one := Quotient.mk (ideal_setoid I hI) 1
-  neg := fun a => Quotient.liftOn a (fun x => Quotient.mk (ideal_setoid I hI) (-x)) (by sorry)
-
-  -- The ring axioms are proven by lifting the properties from the base ring R
-  add_assoc := by sorry
-  add_zero := by sorry
-  add_left_neg := by sorry
-  add_comm := by sorry
-  mul_assoc := by sorry
-  mul_one := by sorry
-  mul_comm := by sorry
-  left_distrib := by sorry
+def IsPrimeIdeal (P : Set R) : Prop :=
+  (∀ x y : R, x * y ∈ P → ¬(y ∈ P) → x ∈ P) ∧ IsIdeal P
 
 -- 1. Maximal Element of a Family
 -- M is in F, and no other element in F strictly contains M.
 def IsMaximalElement (M : Set R) (F : Set (Set R)) : Prop :=
   M ∈ F ∧ ∀ P ∈ F, M ⊆ P → P = M
 
--- 2. The Family of All Ideals
-def IdealsOfR : Set (Set R) :=
+
+--Important Collections 1--
+def IdealsOf (R:Type)[CommutativeRing R] : Set (Set R) :=
   { I : Set R | IsIdeal I }
 
--- 3. The Family of Proper Ideals
-def ProperIdealsOfR : Set (Set R) :=
+def ProperIdealsOf (R:Type)[CommutativeRing R] : Set (Set R) :=
   { I : Set R | IsIdeal I ∧ ¬((1 : R) ∈ I) }
 
--- 4. Maximal Ideal
+def IdealsContaining (I : Set R) : Set (Set R) :=
+  { J : Set R | IsIdeal J ∧ I ⊆ J }
+def PrimeIdealsof (R:Type)[CommutativeRing R]: Set (Set R):=
+{P:Set R|IsPrimeIdeal P}
+
+def PrimeIdealsContaining (I : Set R) : Set (Set R) :=
+  { J : Set R | IsPrimeIdeal J ∧ I ⊆ J }
+-- --
+
+
 -- A maximal ideal is a maximal element within the family of proper ideals.
 def IsMaximalIdeal (M : Set R) : Prop :=
-  IsMaximalElement M ProperIdealsOfR
---Arbitrary intersection of ideals is an ideal--
-theorem Arb_int_ideal (F : Set (Set R)) (hF : F ⊆ IdealsOfR) : IsIdeal ({x : R | ∀ I ∈ F, x ∈ I}) := by
+  IsMaximalElement M (ProperIdealsOf R)
+
+
+--Important Lemmas--
+lemma collection_primes_subset_ideals : PrimeIdealsof R ⊆ IdealsOf R:= by
+  intro I hI
+  simp_all[PrimeIdealsof, IdealsOf,IsPrimeIdeal]
+
+theorem Arb_int_ideal (F : Set (Set R)) (hF : F ⊆ IdealsOf R) : IsIdeal (sInter F) := by
     constructor
     intro I hI
     exact (hF hI).zero_mem
@@ -266,3 +186,11 @@ theorem Arb_int_ideal (F : Set (Set R)) (hF : F ⊆ IdealsOfR) : IsIdeal ({x : R
     (expose_names; exact Set.mem_of_subset_of_mem (fun ⦃a_1⦄ a => a) left)
     (expose_names; exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) (left_1 I hI))
     (expose_names; exact ((fun a => right) ∘ F) I)
+
+def ideal_generated_by (E : Set R) : Set R :=
+  sInter (IdealsContaining E)
+
+theorem ideal_gen_by_is_ideal (E: Set R): IsIdeal (ideal_generated_by E) := by
+  apply Arb_int_ideal
+  intro x hx
+  exact Set.mem_of_mem_inter_left hx
