@@ -109,8 +109,13 @@ theorem quotient_pi_surjective (I : Set R) (hI : IsIdeal I) :
   use x
   exact hx
 
-theorem ideal_is_kernel (I: Set R)(hI:IsIdeal I): kernel (quotient_pi_hom I hI)= I := by
-  sorry
+theorem ideal_is_kernel (I : Set R) (hI : IsIdeal I) : kernel (quotient_pi_hom I hI) = I := by
+  ext x
+  simp only [kernel, quotient_pi_hom]
+  change Quotient.mk (ideal_setoid I hI) x = Quotient.mk (ideal_setoid I hI) 0 ↔ x ∈ I
+  simp [Quotient.eq,ideal_setoid,ideal_equiv]
+  rw[← neg_one_element 0, mul_comm, zero_mul,add_zero x]
+
 /-- The forward mapping φ that takes an ideal J ⊇ I to its extended ideal J/I in the quotient ring.
     Defined natively using ideal_extension. -/
 def phi (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) : IdealsOfQuotient I hI :=
@@ -132,15 +137,19 @@ theorem prop_1_1_prime_correspondence (I : Set R) (hI : IsIdeal I) : ∀ J : Ide
   sorry
 
 -- Forward direction helpers (phi)
-lemma mem_of_mem_phi (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) (x : R)
-    (hx : quotient_pi_hom I hI x ∈ (phi I hI J).1) : x ∈ J.1 := by
+lemma mem_of_mem_phi (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) (x : R) (hx : quotient_pi_hom I hI x ∈ (phi I hI J).1) : x ∈ J.1 := by
   sorry
 
-lemma phi_prime (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) (h_prime : IsPrimeIdeal J.1) :
-    IsPrimeIdeal (phi I hI J).1 := by
+lemma phi_prime (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) (h_prime : IsPrimeIdeal J.1) : IsPrimeIdeal (phi I hI J).1 := by
   sorry
 
 -- Reverse direction helpers (comap)
-lemma comap_is_prime_containing (I : Set R) (hI : IsIdeal I) (P : Set (QuotientRing I hI))
-    (hP : IsPrimeIdeal P) : IsPrimeIdeal (quotient_comap I hI P) ∧ I ⊆ quotient_comap I hI P := by
-  sorry
+lemma comap_is_prime_containing (I : Set R) (hI : IsIdeal I) (P : Set (QuotientRing I hI)) (hP : IsPrimeIdeal P) : IsPrimeIdeal (quotient_comap I hI P) ∧ I ⊆ quotient_comap I hI P := by
+  constructor
+  apply pideal_contraction_is_pideal
+  exact hP
+  intro x hx
+  simp[quotient_comap,ideal_contraction]
+  simp[← ideal_is_kernel I hI,kernel] at hx
+  rw[hx]
+  exact (hP.2.1)

@@ -34,6 +34,7 @@ theorem add_self_cancel (a b : R) (h : a + b = a) : b = 0 := by
     _ = -a + (a + b) := (add_assoc (-a) a b)
     _ = -a + a := by rw [h]
     _ = 0 := add_left_neg a
+
 theorem zero_mul (a:R): (0:R) * a= (0:R) := by
   have ha: 0*a=0*a+0*a := by
     calc
@@ -42,7 +43,6 @@ theorem zero_mul (a:R): (0:R) * a= (0:R) := by
     _=a*0+ a*0 := left_distrib a 0 0
     _=0*a + 0*a := by simp [mul_comm 0 a]
   exact add_self_cancel (0 * a) (0 * a) (id (Eq.symm ha))
-variable {R : Type} [CommutativeRing R]
 
 theorem add_right_cancel (a x y : R) (h : x + a = y + a) : x = y := by
   calc
