@@ -194,3 +194,66 @@ theorem ideal_gen_by_is_ideal (E: Set R): IsIdeal (ideal_generated_by E) := by
   apply Arb_int_ideal
   intro x hx
   exact Set.mem_of_mem_inter_left hx
+
+def multiples_of (x:R): Set R :=
+set_mul {y| y:R} {x}
+
+lemma multiples_of_is_ideal (x:R): IsIdeal (multiples_of x):= by
+  constructor
+  -- 1. Proof that 0 is in the set
+  use 0, x
+  constructor
+  use 0
+  constructor
+  exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) rfl
+  exact zero_mul x
+
+  -- 2. Proof of additive subgroup (closed under a + -b)
+  intro a b ha hb
+  obtain ⟨r1, ⟨x1, ⟨ha1, ⟨hx1, ha3⟩⟩⟩⟩ := ha
+  obtain ⟨r2, ⟨x2, ⟨hb1, ⟨hx2, hb3⟩⟩⟩⟩ := hb
+  use r1 + (-r2), x
+  constructor
+  simp
+  constructor
+  exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) rfl
+  rw [hx2] at hb3
+  rw [hx1] at ha3
+  rw[← ha3,← neg_one_element b,← hb3]  -- Substitute a and b into the goal
+  rw [mul_comm, left_distrib, mul_comm, mul_comm x (-r2), ← neg_one_element r2, ← CommutativeRing.mul_assoc (-1) (r2) x]
+
+  -- 3. Proof of the absorption property
+  intro c a ha
+  obtain ⟨r1, ⟨x1, ⟨ha1, ⟨hx1, ha3⟩⟩⟩⟩ := ha
+  obtain ⟨w, ⟨x2, ⟨hw, ⟨hx2, hx1⟩⟩⟩⟩ := hx1
+  rw [← hx1, hx2 ] at ha3
+  use r1 * w, x
+  constructor
+  simp
+  constructor
+  exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) rfl
+  rw [ ← ha3, ← CommutativeRing.mul_assoc]
+
+theorem principal_ideal_ismultiples (x:R): ideal_generated_by {x}=multiples_of x := by
+  ext y
+  simp[ideal_generated_by]
+  constructor
+  intro hy
+  apply hy
+  constructor
+  exact multiples_of_is_ideal x
+  intro a ha
+  use 1, a
+  simp_all
+  rw[mul_comm]
+  exact CommutativeRing.mul_one a
+  intro hy I hI
+  obtain⟨r,⟨r2,⟨hr,⟨hx,hy⟩⟩⟩⟩:= hy
+  apply hI.1.3 r
+  use r, r2
+  simp_all
+  constructor
+  exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) rfl
+  rw[hx]
+  apply hI.2
+  exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) rfl

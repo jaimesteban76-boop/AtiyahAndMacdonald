@@ -16,7 +16,7 @@
     ["imports",
      [["AtiyahAndMacdonald.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Base:importAllArts", "7ebdd53f1e547acf"]]]]],
+      ["AtiyahAndMacdonald.Base:importAllArts", "0609d5806ad66954"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -31,4 +31,4 @@
   ["Module.name: AtiyahAndMacdonald.Ring_Hom", "819cef425902a385"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "5e0d9f528a285869"}
+ "depHash": "1989fe76feb0b021"}

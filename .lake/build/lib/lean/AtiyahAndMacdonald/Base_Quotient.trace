@@ -37,9 +37,9 @@
     ["imports",
      [["AtiyahAndMacdonald.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Base:importAllArts", "7ebdd53f1e547acf"],
+      ["AtiyahAndMacdonald.Base:importAllArts", "0609d5806ad66954"],
       ["AtiyahAndMacdonald.Ring_Hom transitive imports (legacy)",
-       "a22ea606e342d212"],
+       "724be2ba51d4129d"],
       ["AtiyahAndMacdonald.Ring_Hom:importAllArts", "0d11245a09a62531"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
@@ -55,4 +55,4 @@
   ["Module.name: AtiyahAndMacdonald.Base_Quotient", "bad864224e91d672"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "805fb4315d59c5c8"}
+ "depHash": "271cff5b4a89463d"}

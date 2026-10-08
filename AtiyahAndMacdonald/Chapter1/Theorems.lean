@@ -7,8 +7,75 @@ variable {R : Type} [CommutativeRing R]
     (ii) the only ideals in R are {0} and R;
     (iii) every homomorphism of R into a non-zero ring B is injective. -/
 
-theorem prop_1_2_i_iff_ii (h_nonzero : (1 : R) ≠ (0 : R)) : IsField R ↔ ∀ I : Set R, IsIdeal I → I = {(0 : R)} ∨ I = ideal_generated_by {(1:R)} := by
-  sorry
+theorem prop_1_2_i_iff_ii (h_nonzero : (1 : R) ≠ (0 : R)) : IsField R ↔ ∀ I : Set R, IsIdeal I → I = {(0 : R)} ∨ 1∈ I := by
+  constructor
+  intro hF I hI
+  by_cases(1∈ I)
+  (expose_names; exact Or.inr h)
+  simp_all
+  ext x
+  change x∈ I ↔ x=0
+  constructor
+  intro hx
+  by_contra h
+  have : IsUnit x := by
+    apply hF.2
+    exact h
+  obtain ⟨ a,ha ⟩:= this
+  rw[mul_comm] at ha
+  have ahh: 1∈ I := by
+    rw[← ha]
+    apply hI.3 a
+    use a, x
+    simp_all
+    exact Set.mem_of_subset_of_mem (fun ⦃a_1⦄ a => a) rfl
+  simp_all
+  intro hx
+  rw[hx]
+  exact hI.zero_mem
+  intro hI
+  constructor
+  exact Ne.symm (Ne.intro (id (Ne.symm h_nonzero)))
+  intro x hx
+  let P:= ideal_generated_by {x}
+  have hP_ideal : IsIdeal P := ideal_gen_by_is_ideal {x}
+  cases hI P hP_ideal with
+  | inl h_zero =>
+
+    have hx_in_P : x ∈ P := by
+      intro I hI
+      exact hI.right rfl
+    rw [h_zero] at hx_in_P
+    exact False.elim (hx hx_in_P)
+
+  | inr h_one =>
+
+    have h_mult_ideal : IsIdeal (multiples_of x) := multiples_of_is_ideal x
+    have h_x_subset : {x} ⊆ multiples_of x := by
+      intro x1 hx1
+      rw[hx1]
+      use 1,x
+      constructor
+      simp
+      constructor
+      exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) rfl
+      rw[mul_comm]
+      exact CommutativeRing.mul_one x
+
+
+    have h_1_in_mult : 1 ∈ multiples_of x :=
+      h_one (multiples_of x) ⟨h_mult_ideal, h_x_subset⟩
+
+
+    obtain ⟨r, ⟨x', ⟨hr, ⟨hx', heq⟩⟩⟩⟩ := h_1_in_mult
+    obtain rfl := hx'
+
+
+    use r
+    rw [mul_comm]
+    exact heq
+
+
 
 theorem prop_1_2_i_iff_iii (h_nonzero : (1 : R) ≠ (0 : R)) : IsField R ↔ ∀ {B : Type} [CommutativeRing B], (1 : B) ≠ (0 : B) → ∀ (f : RingHom R B), Function.Injective f := by
   sorry
