@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["0c3c9db0478c647f.olean"],
+ {"o": ["5e6d1e16537a6c56.olean"],
   "m": false,
-  "i": "4822ea74eee19b42.ilean",
+  "i": "285131c3ad11ad14.ilean",
   "c": "aa8105fdc929c261.c"},
  "log":
  [{"message":
@@ -19,22 +19,16 @@
    "AtiyahAndMacdonald/Base_Quotient.lean:75:0: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Base_Quotient.lean:112:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Base_Quotient.lean:132:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Base_Quotient.lean:127:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Base_Quotient.lean:136:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Base_Quotient.lean:131:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Base_Quotient.lean:140:6: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Base_Quotient.lean:135:6: declaration uses `sorry`",
-   "level": "warning"},
-  {"message":
-   "AtiyahAndMacdonald/Base_Quotient.lean:139:6: declaration uses `sorry`",
-   "level": "warning"},
-  {"message":
-   "AtiyahAndMacdonald/Base_Quotient.lean:144:6: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Base_Quotient.lean:143:6: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -43,10 +37,10 @@
     ["imports",
      [["AtiyahAndMacdonald.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Base:importAllArts", "5b411ed4cf178b68"],
+      ["AtiyahAndMacdonald.Base:importAllArts", "7ebdd53f1e547acf"],
       ["AtiyahAndMacdonald.Ring_Hom transitive imports (legacy)",
-       "e0b0e40f2cd9707d"],
-      ["AtiyahAndMacdonald.Ring_Hom:importAllArts", "97d2db445d2978c7"]]]]],
+       "a22ea606e342d212"],
+      ["AtiyahAndMacdonald.Ring_Hom:importAllArts", "0d11245a09a62531"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -55,10 +49,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Base_Quotient.lean",
-   "70c7ec4b327b8ecf"],
+   "acbf6a9d096a688b"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Base_Quotient", "bad864224e91d672"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "04c07ddba379b364"}
+ "depHash": "805fb4315d59c5c8"}

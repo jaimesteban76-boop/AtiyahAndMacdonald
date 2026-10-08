@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["2af538f3faf8c76f.olean"],
+ {"o": ["e3aba52b07c33b95.olean"],
   "m": false,
-  "i": "767a3b7b6d5c1c3b.ilean",
+  "i": "3a6b0e1d2d355e05.ilean",
   "c": "c1d2791b60b66a89.c"},
  "log":
  [{"message":
@@ -16,11 +16,11 @@
     ["imports",
      [["AtiyahAndMacdonald.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Base:importAllArts", "5b411ed4cf178b68"],
+      ["AtiyahAndMacdonald.Base:importAllArts", "7ebdd53f1e547acf"],
       ["AtiyahAndMacdonald.Base_Quotient transitive imports (legacy)",
-       "953df07500d0d5c7"],
+       "e9c108bab20665f6"],
       ["AtiyahAndMacdonald.Base_Quotient:importAllArts",
-       "e0a6873bade91137"]]]]],
+       "b396ccf702c930e3"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -29,10 +29,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Definitions.lean",
-   "ce4d9a2e69c0b368"],
+   "3e903c67b2d4e06e"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Chapter1.Definitions", "f3fdecfb9194d2d9"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "07057701808f82e9"}
+ "depHash": "ac57e515759d5866"}

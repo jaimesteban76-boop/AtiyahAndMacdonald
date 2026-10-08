@@ -1,0 +1,56 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["a776a0f14553447e.olean"],
+  "m": false,
+  "i": "a3f896cbc053d96f.ilean",
+  "c": "0c9367d5ef940670.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter2\\Mod_Hom.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter2\\Mod_Hom.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter2\\Mod_Hom.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter2\\Mod_Hom.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter2\\Mod_Hom.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter2/Mod_Hom.lean:21:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter2/Mod_Hom.lean:27:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter2/Mod_Hom.lean:34:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter2/Mod_Hom.lean:41:9: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter2/Mod_Hom.lean:56:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter2/Mod_Hom.lean:74:8: declaration uses `sorry`",
+   "level": "warning"}],
+ "inputs":
+ [["deps",
+   [["AtiyahAndMacdonald/AtiyahAndMacdonald:extraDep",
+     [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["AtiyahAndMacdonald.Chapter2.Definitions transitive imports (legacy)",
+       "a22ea606e342d212"],
+      ["AtiyahAndMacdonald.Chapter2.Definitions:importAllArts",
+       "3e6228d08884c3ba"],
+      ["AtiyahAndMacdonald.Ring_Hom transitive imports (legacy)",
+       "a22ea606e342d212"],
+      ["AtiyahAndMacdonald.Ring_Hom:importAllArts", "0d11245a09a62531"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
+   "6e1b3f3248ad81dc"],
+  ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter2\\Mod_Hom.lean",
+   "787bc782b8cbe631"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: AtiyahAndMacdonald.Chapter2.Mod_Hom", "e13628daf6ce417c"],
+  ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "e28f8e158872434d"}
