@@ -98,6 +98,11 @@ LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_npow(lean_object*, lean_object*, 
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_npow___boxed(lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_instHPowNat__atiyahAndMacdonald___redArg(lean_object*);
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_instHPowNat__atiyahAndMacdonald(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__0(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__1(lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__2(lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring(lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_nsmul___redArg(lean_object* v_inst_1_, lean_object* v_x_2_, lean_object* v_x_3_){
 _start:
 {
@@ -391,6 +396,102 @@ v___x_174_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_npow___boxed), 4, 
 lean_closure_set(v___x_174_, 0, lean_box(0));
 lean_closure_set(v___x_174_, 1, v_inst_173_);
 return v___x_174_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__0(lean_object* v_toNeg_175_, lean_object* v_a_176_){
+_start:
+{
+lean_object* v___x_177_; 
+v___x_177_ = lean_apply_1(v_toNeg_175_, v_a_176_);
+return v___x_177_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__1(lean_object* v_toMul_178_, lean_object* v_a_179_, lean_object* v_b_180_){
+_start:
+{
+lean_object* v___x_181_; 
+v___x_181_ = lean_apply_2(v_toMul_178_, v_a_179_, v_b_180_);
+return v___x_181_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__2(lean_object* v_toAdd_182_, lean_object* v_a_183_, lean_object* v_b_184_){
+_start:
+{
+lean_object* v___x_185_; 
+v___x_185_ = lean_apply_2(v_toAdd_182_, v_a_183_, v_b_184_);
+return v___x_185_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring___redArg(lean_object* v_inst_186_){
+_start:
+{
+lean_object* v_toAdd_187_; lean_object* v_toMul_188_; lean_object* v_toZero_189_; lean_object* v_toOne_190_; lean_object* v_toNeg_191_; lean_object* v___x_193_; uint8_t v_isShared_194_; uint8_t v_isSharedCheck_201_; 
+v_toAdd_187_ = lean_ctor_get(v_inst_186_, 0);
+v_toMul_188_ = lean_ctor_get(v_inst_186_, 1);
+v_toZero_189_ = lean_ctor_get(v_inst_186_, 2);
+v_toOne_190_ = lean_ctor_get(v_inst_186_, 3);
+v_toNeg_191_ = lean_ctor_get(v_inst_186_, 4);
+v_isSharedCheck_201_ = !lean_is_exclusive(v_inst_186_);
+if (v_isSharedCheck_201_ == 0)
+{
+v___x_193_ = v_inst_186_;
+v_isShared_194_ = v_isSharedCheck_201_;
+goto v_resetjp_192_;
+}
+else
+{
+lean_inc(v_toNeg_191_);
+lean_inc(v_toOne_190_);
+lean_inc(v_toZero_189_);
+lean_inc(v_toMul_188_);
+lean_inc(v_toAdd_187_);
+lean_dec(v_inst_186_);
+v___x_193_ = lean_box(0);
+v_isShared_194_ = v_isSharedCheck_201_;
+goto v_resetjp_192_;
+}
+v_resetjp_192_:
+{
+lean_object* v___f_195_; lean_object* v___f_196_; lean_object* v___f_197_; lean_object* v___x_199_; 
+v___f_195_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__0), 2, 1);
+lean_closure_set(v___f_195_, 0, v_toNeg_191_);
+v___f_196_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__1), 3, 1);
+lean_closure_set(v___f_196_, 0, v_toMul_188_);
+v___f_197_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_subring__is__ring___redArg___lam__2), 3, 1);
+lean_closure_set(v___f_197_, 0, v_toAdd_187_);
+if (v_isShared_194_ == 0)
+{
+lean_ctor_set(v___x_193_, 4, v___f_195_);
+lean_ctor_set(v___x_193_, 1, v___f_196_);
+lean_ctor_set(v___x_193_, 0, v___f_197_);
+v___x_199_ = v___x_193_;
+goto v_reusejp_198_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_200_; 
+v_reuseFailAlloc_200_ = lean_alloc_ctor(0, 5, 0);
+lean_ctor_set(v_reuseFailAlloc_200_, 0, v___f_197_);
+lean_ctor_set(v_reuseFailAlloc_200_, 1, v___f_196_);
+lean_ctor_set(v_reuseFailAlloc_200_, 2, v_toZero_189_);
+lean_ctor_set(v_reuseFailAlloc_200_, 3, v_toOne_190_);
+lean_ctor_set(v_reuseFailAlloc_200_, 4, v___f_195_);
+v___x_199_ = v_reuseFailAlloc_200_;
+goto v_reusejp_198_;
+}
+v_reusejp_198_:
+{
+return v___x_199_;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_subring__is__ring(lean_object* v_R_202_, lean_object* v_inst_203_, lean_object* v_S_204_){
+_start:
+{
+lean_object* v___x_205_; 
+v___x_205_ = lp_AtiyahAndMacdonald_subring__is__ring___redArg(v_inst_203_);
+return v___x_205_;
 }
 }
 lean_object* initialize_Init(uint8_t builtin);

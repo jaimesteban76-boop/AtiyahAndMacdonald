@@ -101,6 +101,22 @@ structure Subring (R : Type) [CommutativeRing R] where
   add_mem {a b : R} : a ∈ carrier → b ∈ carrier → a + b ∈ carrier
   mul_mem {a b : R} : a ∈ carrier → b ∈ carrier → a * b ∈ carrier
   neg_mem {a : R} : a ∈ carrier → -a ∈ carrier
+-- 1. Equip the Subring with a CommutativeRing instance
+instance subring_is_ring {R : Type} [CommutativeRing R] (S : Subring R) : CommutativeRing S.carrier where
+  add := fun a b => ⟨a.val + b.val, S.add_mem a.property b.property⟩
+  mul := fun a b => ⟨a.val * b.val, S.mul_mem a.property b.property⟩
+  zero := ⟨0, S.zero_mem⟩
+  one := ⟨1, S.one_mem⟩
+  neg := fun a => ⟨-a.val, S.neg_mem a.property⟩
+  add_assoc := by intro a b c; apply Subtype.ext; apply add_assoc
+  add_zero := by intro a; apply Subtype.ext; apply add_zero
+  add_left_neg := by intro a; apply Subtype.ext; apply add_left_neg
+  add_comm := by intro a b; apply Subtype.ext; apply add_comm
+  mul_assoc := by intro a b c; apply Subtype.ext; apply CommutativeRing.mul_assoc
+  mul_one := by intro a; apply Subtype.ext; apply CommutativeRing.mul_one
+  mul_comm := by intro a b; apply Subtype.ext; apply CommutativeRing.mul_comm
+  left_distrib := by intro a b c; apply Subtype.ext; apply CommutativeRing.left_distrib
+
 def set_mul (A B : Set R) : Set R :=
   fun x => ∃ a b : R, a ∈ A ∧ b ∈ B ∧ a * b = x
 theorem h_in_set_mul (A B: Set R)(a b :R): (a∈ A ∧ b ∈ B)→ a * b ∈ set_mul A B := by

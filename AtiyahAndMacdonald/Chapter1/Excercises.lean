@@ -1,7 +1,7 @@
 import AtiyahAndMacdonald.Chapter1.Theorems
 
 
-variable {R : Type} [CommutativeRing R]
+variable {A B : Type} [CommutativeRing A] [CommutativeRing B]
 
--- Excercise 1.12-- Colon ideals properties
---Excercise 1.13-- Radical properties
+theorem pideal_extension_is_pideal (f:RingHom A B) (I:Set A)(hI: IsPrimeIdeal I) (hf:Issurj_hom f): IsPrimeIdeal (ideal_extension f I) ↔ kernel f ⊆ I := by
+  sorry

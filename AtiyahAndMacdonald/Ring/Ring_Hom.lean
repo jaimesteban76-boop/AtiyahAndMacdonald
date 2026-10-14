@@ -17,6 +17,10 @@ instance {A B : Type} [CommutativeRing A] [CommutativeRing B] : CoeFun (RingHom 
 def kernel {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Set A :=
   { x : A | f x = 0}
 
+def Issurj_hom (f:RingHom A B): Prop :=
+  ∀b:B, ∃a:A, f a = b
+def Isinj_hom (f:RingHom A B): Prop :=
+∀ a1 a2: A, f a1 = f a2 → a1 = a2
 /-- An A-algebra is a ring B together with a ring homomorphism f : A → B.[cite: 3] -/
 structure AAlgebra (A B : Type) [CommutativeRing A] [CommutativeRing B] where
   hom : RingHom A B
@@ -77,6 +81,13 @@ def ideal_extension {A B: Type }[CommutativeRing A][CommutativeRing B](f : RingH
   ideal_generated_by { y : B | ∃ x ∈ I, f x = y }
 
 --Important Lemmas--
+theorem ideal_generated_by_contains {A:Type}[CommutativeRing A](S:Set A): ideal_generated_by S ∈ IdealsContaining S := by
+  constructor
+  apply ideal_gen_by_is_ideal
+  simp[ideal_generated_by,sInter]
+  intro x hx I hI
+  apply hI.2 hx
+
 theorem ideal_contraction_is_ideal {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) (J : Set B) (hJ : IsIdeal J) : IsIdeal (ideal_contraction f J) := by
   simp [ideal_contraction]
   constructor
@@ -116,3 +127,118 @@ theorem kernel_is_ideal {A B : Type} [CommutativeRing A] [CommutativeRing B] (f 
   obtain ⟨a1,⟨b,⟨ha1,⟨hb,hab ⟩⟩⟩⟩:= hy
   simp_all
   rw[← hab,f.map_mul,hb,mul_comm,zero_mul]
+
+
+
+theorem ideal_extension_surj_image_mem (f: RingHom A B) (I: Set A) (hI: IsIdeal I)(hf: Issurj_hom f): f '' I = ideal_extension f I :=by
+  ext b
+  constructor
+  intro hb
+  apply (ideal_generated_by_contains (f '' I)).2 hb
+  intro hI1
+  apply hI1
+  constructor
+  constructor
+  use 0
+  exact ⟨hI.zero_mem, zero_in_kernel f ⟩
+  intro x y hx hy
+  obtain ⟨z,⟨_,h1⟩⟩:= hx
+  obtain ⟨w,⟨ _,h2⟩⟩:= hy
+  use z+ (-w)
+  constructor
+  (expose_names; exact hI.additive_subgroup z w left left_1)
+  rw[f.map_add,fneg_a_neg_fa,h1,h2]
+  intro a x hx
+  obtain ⟨a1,⟨w,⟨_,⟨hn1,haw⟩⟩⟩ ⟩:= hx
+  obtain ⟨m,hm ⟩:= hf a1
+  obtain ⟨n,⟨_,hn⟩⟩:= hn1
+  use m*n
+  constructor
+  apply hI.absorb m
+  use m, n
+  simp
+  constructor
+  rfl
+  (expose_names; exact Set.mem_of_subset_of_mem (fun ⦃a⦄ a_1 => a_1) left_1)
+  rw[f.map_mul,hm,hn,haw]
+  exact Set.ofPred_subset.mpr fun x a => a
+
+
+
+--Image of morphism is Subring--
+/-- The image of a ring homomorphism defined as a Subring of B -/
+def hom_image {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Subring B where
+  carrier := { y : B | ∃ x : A, f x = y }
+
+  zero_mem := by
+    use 0
+    exact zero_in_kernel f
+
+  one_mem := by
+    use 1
+
+    exact f.map_one
+
+  add_mem := by
+    rintro a b ⟨x, hx⟩ ⟨y, hy⟩
+    use x + y
+
+    rw [f.map_add, hx, hy]
+
+  mul_mem := by
+    rintro a b ⟨x, hx⟩ ⟨y, hy⟩
+    use x * y
+
+    rw [f.map_mul, hx, hy]
+
+  neg_mem := by
+    rintro a ⟨x, hx⟩
+    use -x
+
+    rw [fneg_a_neg_fa, hx]
+
+/-- The surjective part of the decomposition: A maps onto the hom_image -/
+def hom_surjection {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : A → (hom_image f).carrier :=
+  -- We construct a Subtype element: the value is `f x`, and the proof it's in the image is `⟨x, rfl⟩`
+  fun x => ⟨f x, ⟨x, rfl⟩⟩
+
+/-- The injective part of the decomposition: The canonical inclusion from the image into B -/
+def hom_injection {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : (hom_image f).carrier → B :=
+  -- We just extract the underlying value from the Subtype
+  fun y => y.val
+
+-- 2. Bundle the surjection
+def hom_surjection_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : RingHom A (hom_image f).carrier where
+  toFun := fun x => ⟨f x, ⟨x, rfl⟩⟩
+  map_add := by intro x y; apply Subtype.ext; exact f.map_add x y
+  map_mul := by intro x y; apply Subtype.ext; exact f.map_mul x y
+  map_one := by apply Subtype.ext; exact f.map_one
+
+-- 3. Bundle the injection
+def hom_injection_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : RingHom (hom_image f).carrier B where
+  toFun := fun y => y.val
+  map_add := by intro x y; rfl
+  map_mul := by intro x y; rfl
+  map_one := by rfl
+
+
+-- 4. Prove the properties using your defined Isinj_hom and Issurj_hom predicates
+theorem hom_surjection_is_surj {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) :
+    Issurj_hom (hom_surjection_hom f) := by
+  -- Let y be an element in the image, so y = ⟨b, ⟨a, ha⟩⟩
+  intro ⟨b, ⟨a, ha⟩⟩
+  use a
+  apply Subtype.ext
+  exact ha
+
+theorem hom_injection_is_inj {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) :
+    Isinj_hom (hom_injection_hom f) := by
+  intro y1 y2 h
+  -- h is exactly the equality of their underlying values in B
+  apply Subtype.ext
+  exact h
+
+-- 5. The final decomposition: f(x) = inj(surj(x))
+theorem hom_decomposition {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) (a : A) :
+    f a = (hom_injection_hom f) ((hom_surjection_hom f) a) := by
+  rfl
