@@ -1,5 +1,4 @@
 import Mathlib.Data.Set.Basic
-set_option linter.style.header false
 set_option linter.style.whitespace false
 set_option linter.style.longLine false
 set_option linter.style.multiGoal false
@@ -51,7 +50,7 @@ theorem add_right_cancel (a x y : R) (h : x + a = y + a) : x = y := by
     _ = (-a + a) + x := by rw [add_left_neg a]
     _ = -a + (a + x) := (add_assoc (-a) a x)
     _ = -a + (x + a) := by rw [add_comm a x]
-    _ = -a + (y + a) := by rw [h]
+    _ = -a + (y + a) := by rw[h]
     _ = -a + (a + y) := by rw [add_comm y a]
     _ = (-a + a) + y := by rw [add_assoc (-a) a y]
     _ = 0 + y := by rw [add_left_neg a]

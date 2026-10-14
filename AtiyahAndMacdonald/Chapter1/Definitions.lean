@@ -1,6 +1,6 @@
-import AtiyahAndMacdonald.Base
-import AtiyahAndMacdonald.Base_Quotient
-set_option linter.unusedSimpArgs false
+import AtiyahAndMacdonald.Ring.Base
+import AtiyahAndMacdonald.Ring.Base_Quotient
+
 
 variable {R : Type} [CommutativeRing R]
 variable {A B: Type}[CommutativeRing A][CommutativeRing B]

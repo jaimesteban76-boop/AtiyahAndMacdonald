@@ -1,7 +1,7 @@
-import AtiyahAndMacdonald.Base
-import AtiyahAndMacdonald.Ring_Hom
-import AtiyahAndMacdonald.Chapter2.Definitions
-import AtiyahAndMacdonald.Chapter2.Mod_Hom
+import AtiyahAndMacdonald.Ring.Base
+import AtiyahAndMacdonald.Ring.Ring_Hom
+import AtiyahAndMacdonald.Module.Base
+import AtiyahAndMacdonald.Module.Mod_Hom
 
 variable {A : Type} [CommutativeRing A]
 variable {M : Type} [Module A M]

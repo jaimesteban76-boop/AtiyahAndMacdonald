@@ -16,7 +16,7 @@
     ["imports",
      [["AtiyahAndMacdonald.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Base:importAllArts", "7ebdd53f1e547acf"]]]]],
+      ["AtiyahAndMacdonald.Base:importAllArts", "307050f3439e0f3d"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -31,4 +31,4 @@
   ["Module.name: AtiyahAndMacdonald.Chapter2.Definitions", "97362f7aa3facbba"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "bf88bed42cc057ec"}
+ "depHash": "3a9f33195b479c4c"}

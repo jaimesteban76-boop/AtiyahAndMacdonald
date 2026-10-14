@@ -1,4 +1,4 @@
-import AtiyahAndMacdonald.Base
+import AtiyahAndMacdonald.Ring.Base
 
 
 variable {A B: Type} [CommutativeRing A][ CommutativeRing B]
@@ -16,6 +16,24 @@ instance {A B : Type} [CommutativeRing A] [CommutativeRing B] : CoeFun (RingHom 
 
 def kernel {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Set A :=
   { x : A | f x = 0}
+
+/-- An A-algebra is a ring B together with a ring homomorphism f : A → B.[cite: 3] -/
+structure AAlgebra (A B : Type) [CommutativeRing A] [CommutativeRing B] where
+  hom : RingHom A B
+
+-- 1. Algebra Homomorphisms
+/-- An A-algebra homomorphism from B to C is a ring homomorphism that commutes
+    with the canonical structure homomorphisms from A. -/
+structure AlgHom (A B C : Type) [CommutativeRing A] [CommutativeRing B] [CommutativeRing C]
+    (algB : AAlgebra A B) (algC : AAlgebra A C) where
+  hom : RingHom B C
+  commutes : ∀ a : A, hom (algB.hom a) = algC.hom a
+
+/-- Allows using the algebra homomorphism as a normal function `f x`. -/
+instance {A B C : Type} [CommutativeRing A] [CommutativeRing B] [CommutativeRing C]
+    {algB : AAlgebra A B} {algC : AAlgebra A C} :
+    CoeFun (AlgHom A B C algB algC) (fun _ => B → C) where
+  coe f := f.hom.toFun
 ---Lemmas for Hom--
 
 theorem zero_in_kernel (f:RingHom A B): f 0= 0:= by

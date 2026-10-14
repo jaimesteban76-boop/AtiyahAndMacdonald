@@ -1,6 +1,6 @@
 // Lean compiler output
 // Module: AtiyahAndMacdonald.Chapter1.Definitions
-// Imports: public import Init public meta import Init public import AtiyahAndMacdonald.Base public import AtiyahAndMacdonald.Base_Quotient
+// Imports: public import Init public meta import Init public import AtiyahAndMacdonald.Ring.Base public import AtiyahAndMacdonald.Ring.Base_Quotient
 #include <lean/lean.h>
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunused-parameter"
@@ -54,8 +54,8 @@ return v_res_20_;
 }
 lean_object* initialize_Init(uint8_t builtin);
 lean_object* initialize_Init(uint8_t builtin);
-lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Base(uint8_t builtin);
-lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Base__Quotient(uint8_t builtin);
+lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Ring_Base(uint8_t builtin);
+lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Ring_Base__Quotient(uint8_t builtin);
 void lean_initialize();
 static bool _G_initialized = false;
 LEAN_EXPORT lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Chapter1_Definitions(uint8_t builtin) {
@@ -69,10 +69,10 @@ lean_dec_ref(res);
 res = initialize_Init(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Base(builtin);
+res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Ring_Base(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Base__Quotient(builtin);
+res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Ring_Base__Quotient(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 return lean_io_result_mk_ok(lean_box(0));

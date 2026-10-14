@@ -1,5 +1,5 @@
-import AtiyahAndMacdonald.Base
-import AtiyahAndMacdonald.Ring_Hom
+import AtiyahAndMacdonald.Ring.Base
+import AtiyahAndMacdonald.Ring.Ring_Hom
 
 variable {R:Type} [CommutativeRing R]
 

@@ -1,6 +1,6 @@
 // Lean compiler output
 // Module: AtiyahAndMacdonald.Chapter2.Mod_Hom
-// Imports: public import Init public meta import Init public import AtiyahAndMacdonald.Chapter2.Definitions public import AtiyahAndMacdonald.Ring_Hom
+// Imports: public import Init public meta import Init public import AtiyahAndMacdonald.Chapter2.Base public import AtiyahAndMacdonald.Ring_Hom
 #include <lean/lean.h>
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunused-parameter"
@@ -295,7 +295,7 @@ return v_res_153_;
 }
 lean_object* initialize_Init(uint8_t builtin);
 lean_object* initialize_Init(uint8_t builtin);
-lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Chapter2_Definitions(uint8_t builtin);
+lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Chapter2_Base(uint8_t builtin);
 lean_object* initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Ring__Hom(uint8_t builtin);
 void lean_initialize();
 static bool _G_initialized = false;
@@ -310,7 +310,7 @@ lean_dec_ref(res);
 res = initialize_Init(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Chapter2_Definitions(builtin);
+res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Chapter2_Base(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 res = initialize_AtiyahAndMacdonald_AtiyahAndMacdonald_Ring__Hom(builtin);

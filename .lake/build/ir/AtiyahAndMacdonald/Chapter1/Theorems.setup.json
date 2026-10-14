@@ -1564,10 +1564,14 @@
     "C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Classes\\Order.olean.private"],
    ["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Classes\\Order.ir.sig",
     "C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Classes\\Order.ir"]],
+  "AtiyahAndMacdonald.Ring.Ring_Hom":
+  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\Ring_Hom.olean"]],
+  "AtiyahAndMacdonald.Ring.Base_Quotient":
+  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\Base_Quotient.olean"]],
+  "AtiyahAndMacdonald.Ring.Base":
+  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\Base.olean"]],
   "AtiyahAndMacdonald.Chapter1.Definitions":
   [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Definitions.olean"]],
-  "AtiyahAndMacdonald.Base":
-  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Base.olean"]],
   "Aesop.Util.UnorderedArraySet":
   [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Util\\UnorderedArraySet.olean",
     "C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Util\\UnorderedArraySet.olean.server",

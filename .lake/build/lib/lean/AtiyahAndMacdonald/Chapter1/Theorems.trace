@@ -1,37 +1,82 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["0051555c3ce5fbf0.olean"],
+ {"o": ["af195f390653c926.olean"],
   "m": false,
-  "i": "7248702570d8f3e3.ilean",
+  "i": "9f8c2f2132a612de.ilean",
   "c": "6b96a61d0721d5ac.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter1\\Theorems.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter1\\Theorems.setup.json --json",
    "level": "trace"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:6:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:80:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:8:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:84:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:13:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:88:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:17:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:92:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:22:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:97:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:28:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:102:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:32:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:105:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:37:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:107:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:111:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:114:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:121:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:124:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:129:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:135:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:138:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:153:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:158:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:164:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:166:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:168:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:170:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:172:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:174:8: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -39,9 +84,9 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Chapter1.Definitions transitive imports (legacy)",
-       "f1e787fe6b31bfb3"],
+       "ed33adf3fb70a699"],
       ["AtiyahAndMacdonald.Chapter1.Definitions:importAllArts",
-       "a60e0f479b720647"]]]]],
+       "5c28acf50b41fd44"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -50,10 +95,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean",
-   "00ae0fe69a1170e7"],
+   "438735b59dbe9d1e"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Chapter1.Theorems", "2d919134ffe11f28"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "98a93cc536331f34"}
+ "depHash": "2ef766d2470106cd"}

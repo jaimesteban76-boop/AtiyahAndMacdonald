@@ -1,0 +1,59 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["0d5c2e144cd3313c.olean"],
+  "m": false,
+  "i": "4a89a9934a3ae82f.ilean",
+  "c": "e42fc33ad378d898.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\Base_Quotient.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\Base_Quotient.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\Base_Quotient.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Ring\\Base_Quotient.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Ring\\Base_Quotient.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:56:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:66:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:75:0: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:132:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:136:8: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:140:6: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:143:6: declaration uses `sorry`",
+   "level": "warning"}],
+ "inputs":
+ [["deps",
+   [["AtiyahAndMacdonald/AtiyahAndMacdonald:extraDep",
+     [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
+       "083fd48f85f890fd"],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "8091dbced6f13d09"],
+      ["AtiyahAndMacdonald.Ring.Ring_Hom transitive imports (legacy)",
+       "88ea307975e1d10d"],
+      ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts",
+       "95d3ebfe0a6d2986"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
+   "6e1b3f3248ad81dc"],
+  ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\Base_Quotient.lean",
+   "86fd86252e05b166"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: AtiyahAndMacdonald.Ring.Base_Quotient", "53f9853ad7efb3fa"],
+  ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "2bb27827b56a6506"}

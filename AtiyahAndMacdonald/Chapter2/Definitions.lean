@@ -1,33 +1,7 @@
-import AtiyahAndMacdonald.Base
+import AtiyahAndMacdonald.Module.Quotient_Module
 
 
-class zMul (A : Type) (M : Type) where
-  zmul : A → M → M
 
-infixr:73 " • " => zMul.zmul
-
-class Module (A : Type) [CommutativeRing A] (M : Type) extends Add M, Zero M, zMul A M where
-  add_assoc : ∀ x y z : M, x + y + z = x + (y + z)
-  add_zero : ∀ x : M, x + 0 = x
-  add_comm : ∀ x y : M, x + y = y + x
-  smul_add : ∀ (a : A) (x y : M), a • (x + y) = a • x + a • y
-  add_smul : ∀ (a b : A) (x : M), (a + b) • x = a • x + b • x
-  mul_smul : ∀ (a b : A) (x : M), (a * b) • x = a • (b • x)
-  one_smul : ∀ x : M, (1 : A) • x = x
-
--- 1. Make A an explicit argument `(A : Type)` so Lean always knows the base ring
-structure IsSubmodule (A : Type) [CommutativeRing A] {M : Type} [Module A M] (N : Set M) : Prop where
-  zero_mem : (0 : M) ∈ N
-  add_mem : ∀ x y : M, x ∈ N → y ∈ N → x + y ∈ N
-  smul_mem : ∀ (a : A) (x : M), x ∈ N → a • x ∈ N
-
--- 2. Pass A explicitly to IsSubmodule
-def SubmodulesContaining (A : Type) [CommutativeRing A] {M : Type} [Module A M] (V : Set M) : Set (Set M) :=
-  { N : Set M | IsSubmodule A N ∧ V ⊆ N }
-
--- 3. Pass A explicitly to SubmodulesContaining
-def Span (A : Type) [CommutativeRing A] {M : Type} [Module A M] (V : Set M) : Set M :=
-  sInter (SubmodulesContaining A V)
 
 -- 4. Pass A explicitly to Span
 def IsFinitelyGenerated (A : Type) [CommutativeRing A] (M : Type) [Module A M] : Prop :=
@@ -54,3 +28,9 @@ def IsFaithfulModule (A : Type) [CommutativeRing A] (M : Type) [Module A M] : Pr
     By applying `Span A` to the pointwise products, we automatically generate the closure of finite sums. -/
 def ideal_smul_mod (A : Type) [CommutativeRing A] {M : Type} [Module A M] (I : Set A) (N : Set M) : Set M :=
   Span A { y | ∃ a x, a ∈ I ∧ x ∈ N ∧ y = a • x }
+
+-- 4. Free Module
+/-- A free A-module is one that is isomorphic to a direct sum of copies of the base ring A.
+    Here, the family of modules is simply M_i = A for all i ∈ I. -/
+def IsFreeModule (A : Type) [CommutativeRing A] (M : Type) [Module A M] : Prop :=
+  ∃ (I : Type), Nonempty (ModIso A M (ArbitraryDirectSum A I (fun _ => A)))
