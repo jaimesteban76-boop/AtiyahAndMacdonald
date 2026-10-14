@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["b9017f2b4b3e685d.olean"],
+ {"o": ["51349de92dd9145f.olean"],
   "m": false,
-  "i": "01a853d7684045c9.ilean",
+  "i": "1ae5f7836cb737dc.ilean",
   "c": "fdb06540e73c955a.c"},
  "log":
  [{"message":
@@ -31,10 +31,10 @@
    "AtiyahAndMacdonald/Module/Mod_Hom.lean:85:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Module/Mod_Hom.lean:141:4: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Module/Mod_Hom.lean:133:4: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Module/Mod_Hom.lean:151:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Module/Mod_Hom.lean:159:8: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -56,10 +56,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Module\\Mod_Hom.lean",
-   "ca91539c5903120c"],
+   "7b31d68621fa71d9"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Module.Mod_Hom", "0e8b66ba6405f1d1"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "cecc9a89e6413857"}
+ "depHash": "25c613d7bb9edf80"}
