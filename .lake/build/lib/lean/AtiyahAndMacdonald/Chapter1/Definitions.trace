@@ -16,11 +16,11 @@
     ["imports",
      [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "8091dbced6f13d09"],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "956bced9f2a65dd7"],
       ["AtiyahAndMacdonald.Ring.Base_Quotient transitive imports (legacy)",
-       "47c00a4eda651839"],
+       "bfee3bff261ddf2e"],
       ["AtiyahAndMacdonald.Ring.Base_Quotient:importAllArts",
-       "114804d9b3cf31f7"]]]]],
+       "0f7ba10a9b6b95b6"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -35,4 +35,4 @@
   ["Module.name: AtiyahAndMacdonald.Chapter1.Definitions", "f3fdecfb9194d2d9"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "e876d75e762df921"}
+ "depHash": "a92602cc3fe063a0"}

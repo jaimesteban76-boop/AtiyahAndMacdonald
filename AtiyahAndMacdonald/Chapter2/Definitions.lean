@@ -3,9 +3,7 @@ import AtiyahAndMacdonald.Module.Quotient_Module
 
 
 
--- 4. Pass A explicitly to Span
-def IsFinitelyGenerated (A : Type) [CommutativeRing A] (M : Type) [Module A M] : Prop :=
-  ∃ V : Set M, (∀ x : M, x ∈ Span A V) ∧ (∃ L : List M, V = { y | y ∈ L })
+
 
 /-- The direct sum M ⊕ N is the set of all pairs (x, y) with x ∈ M, y ∈ N.[cite: 3] -/
 def DirectSum (A:Type)[CommutativeRing A] (M N : Type) [Module A M] [Module A N] : Type :=

@@ -113,8 +113,13 @@ theorem pideal_contraction_is_pideal {A B: Type }[CommutativeRing A][Commutative
   intro x y hxy hy
   rw[f.map_mul x y] at hxy
   exact hJ.1 _ _ hxy hy
+  constructor
   apply ideal_contraction_is_ideal
-  exact hJ.2
+  exact hJ.2.1
+  by_contra h
+  simp[ideal_contraction,f.map_one ] at h
+  exact hJ.2.2 h
+
 
 theorem kernel_is_ideal {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : IsIdeal (kernel f) := by
   simp_all[kernel]
@@ -242,3 +247,7 @@ theorem hom_injection_is_inj {A B : Type} [CommutativeRing A] [CommutativeRing B
 theorem hom_decomposition {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) (a : A) :
     f a = (hom_injection_hom f) ((hom_surjection_hom f) a) := by
   rfl
+
+--f^* --
+def f_star (f:RingHom A B): Spectrum B → Spectrum A :=
+  fun ⟨P,hP⟩ => ⟨ideal_contraction  f P, pideal_contraction_is_pideal f P hP⟩

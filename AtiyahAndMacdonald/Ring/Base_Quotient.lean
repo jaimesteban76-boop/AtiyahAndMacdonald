@@ -152,4 +152,4 @@ lemma comap_is_prime_containing (I : Set R) (hI : IsIdeal I) (P : Set (QuotientR
   simp[quotient_comap,ideal_contraction]
   simp[← ideal_is_kernel I hI,kernel] at hx
   rw[hx]
-  exact (hP.2.1)
+  exact (hP.2.1.1)

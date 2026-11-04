@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["0d5c2e144cd3313c.olean"],
+ {"o": ["c20e9d7ef7b34b1a.olean"],
   "m": false,
-  "i": "4a89a9934a3ae82f.ilean",
+  "i": "1f7a82dee43c0d49.ilean",
   "c": "e42fc33ad378d898.c"},
  "log":
  [{"message":
@@ -37,11 +37,11 @@
     ["imports",
      [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "8091dbced6f13d09"],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "956bced9f2a65dd7"],
       ["AtiyahAndMacdonald.Ring.Ring_Hom transitive imports (legacy)",
-       "88ea307975e1d10d"],
+       "9686f428481e50c5"],
       ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts",
-       "85934ef9c9763fd6"]]]]],
+       "070a01e384f35279"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -50,10 +50,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\Base_Quotient.lean",
-   "86fd86252e05b166"],
+   "bdbd630177951465"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Ring.Base_Quotient", "53f9853ad7efb3fa"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "8bf80766b8a77d9b"}
+ "depHash": "3582c2e3b52d72f2"}

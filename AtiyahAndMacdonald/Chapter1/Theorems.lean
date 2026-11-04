@@ -108,7 +108,7 @@ theorem A_has_no_nilpotent_elements : Nilradical (QuotientRing (Nilradical R) (n
   sorry
 
 /-- Proposition 1.8: Nilradical is the intersection of all prime ideals -/
-theorem nilradical_eq_inter_prime : Nilradical R = sInter (PrimeIdealsof R) := by
+theorem nilradical_eq_inter_prime : Nilradical R = sInter (Spectrum R) := by
     sorry
 --Proposition 1.9--
 theorem Prop_1_9 (x : R) :  x ∈ Nilradical R ↔ ∀ y : R, IsUnit (1 + -(x * y)) := by
@@ -139,15 +139,29 @@ theorem prop_1_11_ii (P : Nat → Set R) (n: Nat)(hP : IsIdealFamily P n)  (I : 
   sorry
 
 /-- Proposition 1.14: The radical of an ideal a is the intersection of the prime ideals which contain a. -/
-theorem prop_1_14 (I : Set R) (hI : IsIdeal I) : Radical I = sInter (PrimeIdealsContaining I) := by
+theorem prop_1_14 (I : Set R) (hI : IsIdeal I) :  Radical I = sInter (Subtype.val '' PrimeIdealsContaining I) := by
   ext x
-  rw [mem_radical_iff_quotient_nilradical I hI, nilradical_eq_inter_prime]
+  simp [mem_radical_iff_quotient_nilradical I hI, nilradical_eq_inter_prime]
   constructor
   intro hx J hJ
-  let J_bundled : IdealsContaining I := ⟨J, ⟨hJ.1.2, hJ.2⟩⟩
+  simp at hJ
+  let J_bundled : IdealsContaining I := ⟨J, ⟨hJ.1.2.1, hJ.2⟩⟩
   exact mem_of_mem_phi I hI J_bundled x (hx (phi I hI J_bundled).1 (phi_prime I hI J_bundled hJ.1))
   intro hx P hP
-  exact hx (quotient_comap I hI P) (comap_is_prime_containing I hI P hP)
+  simp[Spectrum] at hP
+  apply hx (quotient_comap I hI P)
+  simp [PrimeIdealsContaining,quotient_comap]
+  constructor
+  intro y hy
+  simp[ideal_contraction]
+  simp [← ideal_is_kernel I hI, kernel] at hy
+  rw[hy]
+  exact hP.2.1.1
+  apply pideal_contraction_is_pideal
+  exact hP
+
+
+
 
 /-- Proposition 1.15: The set of zero-divisors is the union of r(Ann(x)) for x ≠ 0. -/
 theorem prop_1_15 :{ y : R | IsZeroDivisor y } = sUnion {P|∃ x≠0, Radical (Annihilator x) =P } := by

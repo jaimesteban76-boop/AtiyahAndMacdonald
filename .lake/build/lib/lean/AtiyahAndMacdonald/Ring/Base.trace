@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["44b2c0254420c54b.olean"],
+ {"o": ["342d846543b88abd.olean"],
   "m": false,
-  "i": "3e01bfa16769c44e.ilean",
+  "i": "994fff0b93c39b86.ilean",
   "c": "c69d9b73924d80a0.c"},
  "log":
  [{"message":
@@ -25,10 +25,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\Base.lean",
-   "3ce1123631dda866"],
+   "969bf34736f8476b"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Ring.Base", "cb1d3f10f5bb8a28"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "b3239be03d8523c4"}
+ "depHash": "30187f93b868ab22"}

@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["af195f390653c926.olean"],
+ {"o": ["f86c62f03a52289e.olean"],
   "m": false,
-  "i": "9f8c2f2132a612de.ilean",
+  "i": "b25a2a3e3e348908.ilean",
   "c": "6b96a61d0721d5ac.c"},
  "log":
  [{"message":
@@ -84,7 +84,7 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Chapter1.Definitions transitive imports (legacy)",
-       "0291d52d28848751"],
+       "60d6519448356627"],
       ["AtiyahAndMacdonald.Chapter1.Definitions:importAllArts",
        "5c28acf50b41fd44"]]]]],
   ["libs",
@@ -95,10 +95,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean",
-   "438735b59dbe9d1e"],
+   "ebc201bd115ec227"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Chapter1.Theorems", "2d919134ffe11f28"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "b05e073f44c7a2bd"}
+ "depHash": "dc56fce0003470a0"}

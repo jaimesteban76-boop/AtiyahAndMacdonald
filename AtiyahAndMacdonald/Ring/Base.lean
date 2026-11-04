@@ -5,11 +5,49 @@ set_option linter.style.multiGoal false
 set_option linter.style.emptyLine false
 set_option linter.flexible false
 set_option linter.style.setOption false
-
+--Set things--
 def sInter {α} (F: Set (Set α)): (Set α):=
 {x:α | ∀ I: Set α, I∈ F→ x∈ I}
 def sUnion {α} (F: Set (Set α)): (Set α):=
 {x:α | ∃ I: Set α, I∈ F → x∈ I}
+--Logic Lemmas--
+/-- Helper theorem to prove 4 propositions are equivalent via a cycle of implications. -/
+theorem prove_cycle_4 {P1 P2 P3 P4 : Prop}
+    (h12 : P1 → P2)
+    (h23 : P2 → P3)
+    (h34 : P3 → P4)
+    (h41 : P4 → P1) :
+    (P1 ↔ P2) ∧ (P1 ↔ P3) ∧ (P1 ↔ P4) := by
+  constructor
+  · -- P1 ↔ P2
+    exact ⟨h12, fun p2 => h41 (h34 (h23 p2))⟩
+  · constructor
+    · -- P1 ↔ P3
+      exact ⟨fun p1 => h23 (h12 p1), fun p3 => h41 (h34 p3)⟩
+    · -- P1 ↔ P4
+      exact ⟨fun p1 => h34 (h23 (h12 p1)), h41⟩
+/-- Helper for a 3-step implication cycle (A → B → C → A) -/
+theorem prove_cycle_3 {P1 P2 P3 : Prop}
+    (h12 : P1 → P2)
+    (h23 : P2 → P3)
+    (h31 : P3 → P1) :
+    (P1 ↔ P2) ∧ (P1 ↔ P3) := by
+  constructor
+  · exact ⟨h12, fun p2 => h31 (h23 p2)⟩
+  · exact ⟨fun p1 => h23 (h12 p1), h31⟩
+
+/-- Helper for a 5-step implication cycle (A → B → C → D → E → A) -/
+theorem prove_cycle_5 {P1 P2 P3 P4 P5 : Prop}
+    (h12 : P1 → P2) (h23 : P2 → P3) (h34 : P3 → P4)
+    (h45 : P4 → P5) (h51 : P5 → P1) :
+    (P1 ↔ P2) ∧ (P1 ↔ P3) ∧ (P1 ↔ P4) ∧ (P1 ↔ P5) := by
+  constructor
+  · exact ⟨h12, fun p2 => h51 (h45 (h34 (h23 p2)))⟩
+  · constructor
+    · exact ⟨fun p1 => h23 (h12 p1), fun p3 => h51 (h45 (h34 p3))⟩
+    · constructor
+      · exact ⟨fun p1 => h34 (h23 (h12 p1)), fun p4 => h51 (h45 p4)⟩
+      · exact ⟨fun p1 => h45 (h34 (h23 (h12 p1))), h51⟩
 -- Redefining as a class to inherit built-in notation
 class CommutativeRing (R : Type) extends Add R, Mul R, Zero R, One R, Neg R where
   add_assoc : ∀ a b c : R, (a + b) + c = a + (b + c)
@@ -152,7 +190,7 @@ theorem Ideal_is_Ring (I:Set R)(hI: IsIdeal I ): (1:R)∈ I↔ ∀r:R, r∈ I :=
   exact Set.mem_preimage.mp (hr 1)
 
 def IsPrimeIdeal (P : Set R) : Prop :=
-  (∀ x y : R, x * y ∈ P → ¬(y ∈ P) → x ∈ P) ∧ IsIdeal P
+  (∀ x y : R, x * y ∈ P → ¬(y ∈ P) → x ∈ P) ∧ IsIdeal P ∧ ¬ (1∈ P)
 
 -- 1. Maximal Element of a Family
 -- M is in F, and no other element in F strictly contains M.
@@ -169,11 +207,11 @@ def ProperIdealsOf (R:Type)[CommutativeRing R] : Set (Set R) :=
 
 def IdealsContaining (I : Set R) : Set (Set R) :=
   { J : Set R | IsIdeal J ∧ I ⊆ J }
-def PrimeIdealsof (R:Type)[CommutativeRing R]: Set (Set R):=
+def Spectrum (R:Type)[CommutativeRing R]: Set (Set R):=
 {P:Set R|IsPrimeIdeal P}
 
-def PrimeIdealsContaining (I : Set R) : Set (Set R) :=
-  { J : Set R | IsPrimeIdeal J ∧ I ⊆ J }
+def PrimeIdealsContaining (I : Set R) : Set (Spectrum R) :=
+  { J : Spectrum R |  I ⊆ J }
 -- --
 
 
@@ -183,9 +221,9 @@ def IsMaximalIdeal (M : Set R) : Prop :=
 
 
 --Important Lemmas--
-lemma collection_primes_subset_ideals : PrimeIdealsof R ⊆ IdealsOf R:= by
+lemma collection_primes_subset_ideals : Spectrum R ⊆ IdealsOf R:= by
   intro I hI
-  simp_all[PrimeIdealsof, IdealsOf,IsPrimeIdeal]
+  simp_all[Spectrum, IdealsOf,IsPrimeIdeal]
 
 theorem Arb_int_ideal (F : Set (Set R)) (hF : F ⊆ IdealsOf R) : IsIdeal (sInter F) := by
     constructor
