@@ -1,5 +1,6 @@
 import AtiyahAndMacdonald.Chapter1.Definitions
 
+
 variable {R : Type} [CommutativeRing R]
 
 /-- Proposition 1.2: Let R be a ring ≠ 0. Then the following are equivalent:
@@ -148,17 +149,9 @@ theorem prop_1_14 (I : Set R) (hI : IsIdeal I) :  Radical I = sInter (Subtype.va
   let J_bundled : IdealsContaining I := ⟨J, ⟨hJ.1.2.1, hJ.2⟩⟩
   exact mem_of_mem_phi I hI J_bundled x (hx (phi I hI J_bundled).1 (phi_prime I hI J_bundled hJ.1))
   intro hx P hP
-  simp[Spectrum] at hP
   apply hx (quotient_comap I hI P)
-  simp [PrimeIdealsContaining,quotient_comap]
-  constructor
-  intro y hy
-  simp[ideal_contraction]
-  simp [← ideal_is_kernel I hI, kernel] at hy
-  rw[hy]
-  exact hP.2.1.1
-  apply pideal_contraction_is_pideal
-  exact hP
+  simp [PrimeIdealsContaining]
+  exact (comap_is_prime_containing I hI P hP).symm
 
 
 
