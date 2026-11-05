@@ -1,31 +1,31 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["6c6c5043ed0abd9b.olean"],
+ {"o": ["ed6c33dc8cdf69f1.olean"],
   "m": false,
-  "i": "2cdc1114e5d01719.ilean",
-  "c": "539dc0d3a3478f88.c"},
+  "i": "63c2584ac4b84056.ilean",
+  "c": "92ec53629565a080.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\PolRings.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\PolRings.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Ring\\PolRings.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Ring\\PolRings.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Ring\\PolRings.setup.json --json",
    "level": "trace"},
   {"message":
-   "AtiyahAndMacdonald/Ring/PolRings.lean:17:4: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/PolRings.lean:18:4: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/PolRings.lean:43:4: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/PolRings.lean:44:4: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/PolRings.lean:51:4: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/PolRings.lean:52:4: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/PolRings.lean:59:9: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/PolRings.lean:60:9: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/PolRings.lean:127:65: Variable name `hI` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hI\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "AtiyahAndMacdonald/Ring/PolRings.lean:131:65: Variable name `hI` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hI\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/PolRings.lean:131:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/PolRings.lean:135:8: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -34,7 +34,10 @@
     ["imports",
      [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "c47763310dd7d10c"],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "3c3bc904852f5e47"],
+      ["AtiyahAndMacdonald.Ring.Ring_Hom transitive imports (legacy)",
+       "7a0b8bd2b7c802b1"],
+      ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts", "c7bfef9f20794268"],
       ["AtiyahAndMacdonald.Nat.Nat_Stuff transitive imports (legacy)",
        "083fd48f85f890fd"],
       ["AtiyahAndMacdonald.Nat.Nat_Stuff:importAllArts",
@@ -47,10 +50,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\PolRings.lean",
-   "4e26210cde54cd50"],
+   "9a070796e60bc57c"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Ring.PolRings", "b2f6434759f3413b"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "ef7221981c9bee32"}
+ "depHash": "60b706a2f5e06e04"}

@@ -1,7 +1,7 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["45107df7533604ae.olean"],
+ {"o": ["7fa81b8fbeba7887.olean"],
   "m": false,
   "i": "48f1f97ebf629409.ilean",
   "c": "fdb06540e73c955a.c"},
@@ -42,12 +42,12 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Module.Base transitive imports (legacy)",
-       "50ead9c4d0bc996f"],
-      ["AtiyahAndMacdonald.Module.Base:importAllArts", "609a5ba628c4dc7f"],
+       "f8317d63fcc15880"],
+      ["AtiyahAndMacdonald.Module.Base:importAllArts", "6a7ff81231b8633a"],
       ["AtiyahAndMacdonald.Ring.Ring_Hom transitive imports (legacy)",
-       "50ead9c4d0bc996f"],
+       "f8317d63fcc15880"],
       ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts",
-       "78e80a4942095c6e"]]]]],
+       "c7bfef9f20794268"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -62,4 +62,4 @@
   ["Module.name: AtiyahAndMacdonald.Module.Mod_Hom", "0e8b66ba6405f1d1"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "d6325df138a123df"}
+ "depHash": "1d41a9095039048a"}

@@ -1,82 +1,82 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["f86c62f03a52289e.olean"],
+ {"o": ["df6a767a7b5032bf.olean"],
   "m": false,
-  "i": "b25a2a3e3e348908.ilean",
+  "i": "35e873b1ab5d873f.ilean",
   "c": "6b96a61d0721d5ac.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter1\\Theorems.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter1\\Theorems.setup.json --json",
    "level": "trace"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:80:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:81:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:84:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:85:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:88:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:89:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:92:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:93:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:97:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:98:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:102:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:103:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:105:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:106:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:107:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:108:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:111:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:112:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:114:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:115:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:121:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:122:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:124:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:125:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:129:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:130:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:135:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:136:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:138:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:139:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:153:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:160:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:158:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:165:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:164:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:171:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:166:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:173:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:168:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:175:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:170:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:177:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:172:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:179:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter1/Theorems.lean:174:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter1/Theorems.lean:181:8: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -84,7 +84,7 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Chapter1.Definitions transitive imports (legacy)",
-       "60d6519448356627"],
+       "f3c23a23b926228d"],
       ["AtiyahAndMacdonald.Chapter1.Definitions:importAllArts",
        "5c28acf50b41fd44"]]]]],
   ["libs",
@@ -95,10 +95,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter1\\Theorems.lean",
-   "ebc201bd115ec227"],
+   "0d7e5294c4edcd97"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Chapter1.Theorems", "2d919134ffe11f28"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "dc56fce0003470a0"}
+ "depHash": "a6b749e2527f0ec4"}

@@ -34,7 +34,7 @@
     ["imports",
      [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "c47763310dd7d10c"]]]]],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "3c3bc904852f5e47"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -49,4 +49,4 @@
   ["Module.name: AtiyahAndMacdonald.Module.Base", "857334b7c20318da"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "c0fd970c99721309"}
+ "depHash": "e1186011f8bae8ab"}

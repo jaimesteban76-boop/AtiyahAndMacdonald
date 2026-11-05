@@ -1,13 +1,8 @@
 import AtiyahAndMacdonald.Ring.PolRings
 import AtiyahAndMacdonald.Module.Base
-import AtiyahAndMacdonald.Ring.Ring_Hom
+
 
 variable {A B : Type} [CommutativeRing A] [CommutativeRing B]
-
-/-- Evaluates a polynomial with coefficients in A at an element x in B,
-    using the ring homomorphism f : A → B to map the coefficients. -/
-def eval_hom (f : RingHom A B) (p : Polynomial A) (x : B) : B :=
-  sum_range (fun i => (f (p.coeff i)) * x ^ i) (p.bound + 1)
 
 /-- An element x of B is integral over A (along f) if it is a root of a monic polynomial with coefficients in A[cite: 3]. -/
 def IsIntegralElement (f : Subring A B) (x : B) : Prop :=

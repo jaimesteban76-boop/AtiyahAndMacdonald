@@ -153,3 +153,25 @@ lemma comap_is_prime_containing (I : Set R) (hI : IsIdeal I) (P : Set (QuotientR
   simp[← ideal_is_kernel I hI,kernel] at hx
   rw[hx]
   exact (hP.2.1.1)
+
+
+--Commutative Diagrams of morphisms--
+/-- 1. Construct the induced ring homomorphism between the quotient rings. -/
+def quotient_induced_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) (b : Set B) (hb : IsIdeal b) :  RingHom (QuotientRing (ideal_contraction f b) (ideal_contraction_is_ideal f b hb)) (QuotientRing b hb) where
+  toFun := fun q => Quotient.liftOn q
+    (fun x => Quotient.mk (ideal_setoid b hb) (f x))
+    (by
+      -- Well-definedness proof: if x ~ y in A, you must prove f(x) ~ f(y) in B
+      sorry)
+  map_add := by sorry
+  map_mul := by sorry
+  map_one := by sorry
+
+/-- 2. Prove that the induced homomorphism is injective. Notice that the injectivity of the induced map relies purely on the definition of ideal contraction, not on the original morphism f being injective! -/
+theorem quotient_induced_hom_inj {A B : Type} [CommutativeRing A] [CommutativeRing B]  (f : RingHom A B) (b : Set B) (hb : IsIdeal b) :  Isinj_hom (quotient_induced_hom f b hb) := by
+  sorry
+
+/-- 3. Package the homomorphism and the injectivity proof into the Subring structure.(Using f.hom to extract the RingHom from the Subring). -/
+def Commutative_Diagrams {A B : Type} [CommutativeRing A] [CommutativeRing B]  (f : Subring A B) (b : Set B) (hb : IsIdeal b) : Subring (QuotientRing (ideal_contraction f.1 b) (ideal_contraction_is_ideal f.1 b hb)) (QuotientRing b hb) where
+  hom := quotient_induced_hom f.hom b hb
+  is_inj := quotient_induced_hom_inj f.hom b hb

@@ -1,4 +1,5 @@
 import AtiyahAndMacdonald.Ring.Base
+import AtiyahAndMacdonald.Ring.Ring_Hom
 import AtiyahAndMacdonald.Nat.Nat_Stuff
 set_option linter.defProp false
 
@@ -80,6 +81,10 @@ def eval (f : Polynomial R) (x : R) : R :=
 /-- Allows using the polynomial as a normal function `f x` instead of `eval f x`. -/
 instance : CoeFun (Polynomial R) (fun _ => R → R) where
   coe f := fun x => eval f x
+/-- Evaluates a polynomial with coefficients in A at an element x in B,
+    using the ring homomorphism f : A → B to map the coefficients. -/
+def eval_hom{A B:Type}[CommutativeRing A][CommutativeRing B] (f : RingHom A B) (p : Polynomial A) (x : B) : B :=
+  sum_range (fun i => (f (p.coeff i)) * x ^ i) (p.bound + 1)
 
 /-- An element x ∈ R is a root of the polynomial f if f(x) = 0. -/
 def IsRoot (f : Polynomial R) (x : R) : Prop :=
@@ -116,7 +121,6 @@ noncomputable def leading_coeff (f : Polynomial R) : R :=
 def IsMonic (f : Polynomial R) : Prop :=
   leading_coeff f = 1
 
--- Keep your current `Polynomial (R : Type) [CommutativeRing R]` exactly as it is!
 
 /-- A predicate to check if all coefficients of a polynomial belong to a given ideal I. -/
 def coeffs_in_ideal {R : Type} [CommutativeRing R] (I : Set R) (f : Polynomial R) : Prop :=

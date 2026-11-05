@@ -36,6 +36,13 @@ LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_phi___redArg();
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_phi___redArg___boxed(lean_object*);
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_phi(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_phi___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom___redArg___lam__0(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_Commutative__Diagrams___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_Commutative__Diagrams(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_Commutative__Diagrams___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_ideal__setoid___redArg(){
 _start:
 {
@@ -235,6 +242,70 @@ lean_object* v_res_88_;
 v_res_88_ = lp_AtiyahAndMacdonald_phi(v_R_83_, v_inst_84_, v_I_85_, v_hI_86_, v_J_87_);
 lean_dec_ref(v_inst_84_);
 return v_res_88_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom___redArg___lam__0(lean_object* v_f_89_, lean_object* v_q_90_){
+_start:
+{
+lean_object* v___x_91_; 
+v___x_91_ = lean_apply_1(v_f_89_, v_q_90_);
+return v___x_91_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom___redArg(lean_object* v_f_92_){
+_start:
+{
+lean_object* v___f_93_; 
+v___f_93_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_quotient__induced__hom___redArg___lam__0), 2, 1);
+lean_closure_set(v___f_93_, 0, v_f_92_);
+return v___f_93_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom(lean_object* v_A_94_, lean_object* v_B_95_, lean_object* v_inst_96_, lean_object* v_inst_97_, lean_object* v_f_98_, lean_object* v_b_99_, lean_object* v_hb_100_){
+_start:
+{
+lean_object* v___f_101_; 
+v___f_101_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_quotient__induced__hom___redArg___lam__0), 2, 1);
+lean_closure_set(v___f_101_, 0, v_f_98_);
+return v___f_101_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_quotient__induced__hom___boxed(lean_object* v_A_102_, lean_object* v_B_103_, lean_object* v_inst_104_, lean_object* v_inst_105_, lean_object* v_f_106_, lean_object* v_b_107_, lean_object* v_hb_108_){
+_start:
+{
+lean_object* v_res_109_; 
+v_res_109_ = lp_AtiyahAndMacdonald_quotient__induced__hom(v_A_102_, v_B_103_, v_inst_104_, v_inst_105_, v_f_106_, v_b_107_, v_hb_108_);
+lean_dec_ref(v_inst_105_);
+lean_dec_ref(v_inst_104_);
+return v_res_109_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_Commutative__Diagrams___redArg(lean_object* v_f_110_){
+_start:
+{
+lean_object* v___f_111_; 
+v___f_111_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_quotient__induced__hom___redArg___lam__0), 2, 1);
+lean_closure_set(v___f_111_, 0, v_f_110_);
+return v___f_111_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_Commutative__Diagrams(lean_object* v_A_112_, lean_object* v_B_113_, lean_object* v_inst_114_, lean_object* v_inst_115_, lean_object* v_f_116_, lean_object* v_b_117_, lean_object* v_hb_118_){
+_start:
+{
+lean_object* v___f_119_; 
+v___f_119_ = lean_alloc_closure((void*)(lp_AtiyahAndMacdonald_quotient__induced__hom___redArg___lam__0), 2, 1);
+lean_closure_set(v___f_119_, 0, v_f_116_);
+return v___f_119_;
+}
+}
+LEAN_EXPORT lean_object* lp_AtiyahAndMacdonald_Commutative__Diagrams___boxed(lean_object* v_A_120_, lean_object* v_B_121_, lean_object* v_inst_122_, lean_object* v_inst_123_, lean_object* v_f_124_, lean_object* v_b_125_, lean_object* v_hb_126_){
+_start:
+{
+lean_object* v_res_127_; 
+v_res_127_ = lp_AtiyahAndMacdonald_Commutative__Diagrams(v_A_120_, v_B_121_, v_inst_122_, v_inst_123_, v_f_124_, v_b_125_, v_hb_126_);
+lean_dec_ref(v_inst_123_);
+lean_dec_ref(v_inst_122_);
+return v_res_127_;
 }
 }
 lean_object* initialize_Init(uint8_t builtin);
