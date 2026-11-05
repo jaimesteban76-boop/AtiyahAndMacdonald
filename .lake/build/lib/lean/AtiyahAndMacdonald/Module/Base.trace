@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["3b18da3c994602ec.olean"],
+ {"o": ["acb7c0b1912ad39a.olean"],
   "m": false,
-  "i": "18c856ddeedb806d.ilean",
-  "c": "58b10c046d987f17.c"},
+  "i": "c069270a1034d23f.ilean",
+  "c": "6f8fc0d7bb474c54.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Module\\Base.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Module\\Base.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Module\\Base.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Module\\Base.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Module\\Base.setup.json --json",
@@ -26,9 +26,6 @@
    "level": "warning"},
   {"message":
    "AtiyahAndMacdonald/Module/Base.lean:82:9: declaration uses `sorry`",
-   "level": "warning"},
-  {"message":
-   "AtiyahAndMacdonald/Module/Base.lean:98:9: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -37,7 +34,7 @@
     ["imports",
      [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "956bced9f2a65dd7"]]]]],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "c47763310dd7d10c"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -46,10 +43,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Module\\Base.lean",
-   "e60a92ef634211e9"],
+   "4c2913adf877b33c"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Module.Base", "857334b7c20318da"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "cdb849fb114350cf"}
+ "depHash": "c0fd970c99721309"}

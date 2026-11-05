@@ -115,3 +115,18 @@ noncomputable def leading_coeff (f : Polynomial R) : R :=
 /-- A polynomial is monic if its leading coefficient is 1. -/
 def IsMonic (f : Polynomial R) : Prop :=
   leading_coeff f = 1
+
+-- Keep your current `Polynomial (R : Type) [CommutativeRing R]` exactly as it is!
+
+/-- A predicate to check if all coefficients of a polynomial belong to a given ideal I. -/
+def coeffs_in_ideal {R : Type} [CommutativeRing R] (I : Set R) (f : Polynomial R) : Prop :=
+  ∀ n, f.coeff n ∈ I
+
+/-- The extension of an ideal I into the polynomial ring R[x],
+    consisting of all polynomials whose coefficients lie in I. -/
+def polynomial_ideal {R : Type} [CommutativeRing R] (I : Set R) (hI : IsIdeal I) : Set (Polynomial R) :=
+  { f : Polynomial R | coeffs_in_ideal I f }
+
+/-- This natively forms an ideal in R[x]. -/
+theorem polynomial_ideal_is_ideal {R : Type} [CommutativeRing R] (I : Set R) (hI : IsIdeal I) :  IsIdeal (polynomial_ideal I hI) := by
+  sorry

@@ -21,6 +21,17 @@ def Issurj_hom (f:RingHom A B): Prop :=
   ∀b:B, ∃a:A, f a = b
 def Isinj_hom (f:RingHom A B): Prop :=
 ∀ a1 a2: A, f a1 = f a2 → a1 = a2
+
+/-- A is a subring of B if there is an injective ring homomorphism from A to B.
+    This natively preserves the CommutativeRing typeclasses for both A and B. -/
+structure Subring (A B : Type) [CommutativeRing A] [CommutativeRing B] where
+  hom : RingHom A B
+  is_inj : Isinj_hom hom
+
+/-- Coerce the Subring directly to a function so it can be evaluated as `s a` for a ∈ A. -/
+instance : CoeFun (Subring A B) (fun _ => A → B) where
+  coe s := s.hom.toFun
+
 /-- An A-algebra is a ring B together with a ring homomorphism f : A → B.[cite: 3] -/
 structure AAlgebra (A B : Type) [CommutativeRing A] [CommutativeRing B] where
   hom : RingHom A B
@@ -171,83 +182,73 @@ theorem ideal_extension_surj_image_mem (f: RingHom A B) (I: Set A) (hI: IsIdeal 
 
 
 --Image of morphism is Subring--
-/-- The image of a ring homomorphism defined as a Subring of B -/
-def hom_image {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Subring B where
-  carrier := { y : B | ∃ x : A, f x = y }
+/-- 1. We first define the type of elements in the image as a Subtype of B. -/
+def ImageType {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Type :=
+  { y : B // ∃ x : A, f x = y }
 
-  zero_mem := by
-    use 0
-    exact zero_in_kernel f
-
-  one_mem := by
-    use 1
-
-    exact f.map_one
-
-  add_mem := by
-    rintro a b ⟨x, hx⟩ ⟨y, hy⟩
+/-- 2. Equip the image subtype with a CommutativeRing instance inherited from B. -/
+instance image_is_ring {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : CommutativeRing (ImageType f) where
+  add := fun a b => ⟨a.val + b.val, by
+    obtain ⟨x, hx⟩ := a.property
+    obtain ⟨y, hy⟩ := b.property
     use x + y
-
-    rw [f.map_add, hx, hy]
-
-  mul_mem := by
-    rintro a b ⟨x, hx⟩ ⟨y, hy⟩
+    rw [f.map_add, hx, hy]⟩
+  mul := fun a b => ⟨a.val * b.val, by
+    obtain ⟨x, hx⟩ := a.property
+    obtain ⟨y, hy⟩ := b.property
     use x * y
-
-    rw [f.map_mul, hx, hy]
-
-  neg_mem := by
-    rintro a ⟨x, hx⟩
+    rw [f.map_mul, hx, hy]⟩
+  zero := ⟨0, by use 0; exact zero_in_kernel f⟩
+  one := ⟨1, by use 1; exact f.map_one⟩
+  neg := fun a => ⟨-a.val, by
+    obtain ⟨x, hx⟩ := a.property
     use -x
+    rw [fneg_a_neg_fa, hx]⟩
+  add_assoc := by intro a b c; apply Subtype.ext; apply add_assoc
+  add_zero := by intro a; apply Subtype.ext; apply add_zero
+  add_left_neg := by intro a; apply Subtype.ext; apply add_left_neg
+  add_comm := by intro a b; apply Subtype.ext; apply add_comm
+  mul_assoc := by intro a b c; apply Subtype.ext; apply CommutativeRing.mul_assoc
+  mul_one := by intro a; apply Subtype.ext; apply CommutativeRing.mul_one
+  mul_comm := by intro a b; apply Subtype.ext; apply CommutativeRing.mul_comm
+  left_distrib := by intro a b c; apply Subtype.ext; apply CommutativeRing.left_distrib
 
-    rw [fneg_a_neg_fa, hx]
-
-/-- The surjective part of the decomposition: A maps onto the hom_image -/
-def hom_surjection {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : A → (hom_image f).carrier :=
-  -- We construct a Subtype element: the value is `f x`, and the proof it's in the image is `⟨x, rfl⟩`
-  fun x => ⟨f x, ⟨x, rfl⟩⟩
-
-/-- The injective part of the decomposition: The canonical inclusion from the image into B -/
-def hom_injection {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : (hom_image f).carrier → B :=
-  -- We just extract the underlying value from the Subtype
-  fun y => y.val
-
--- 2. Bundle the surjection
-def hom_surjection_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : RingHom A (hom_image f).carrier where
-  toFun := fun x => ⟨f x, ⟨x, rfl⟩⟩
-  map_add := by intro x y; apply Subtype.ext; exact f.map_add x y
-  map_mul := by intro x y; apply Subtype.ext; exact f.map_mul x y
-  map_one := by apply Subtype.ext; exact f.map_one
-
--- 3. Bundle the injection
-def hom_injection_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : RingHom (hom_image f).carrier B where
+/-- 3. Bundle the injection from the ImageType into B -/
+def hom_injection_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : RingHom (ImageType f) B where
   toFun := fun y => y.val
   map_add := by intro x y; rfl
   map_mul := by intro x y; rfl
   map_one := by rfl
 
+theorem hom_injection_is_inj {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) :
+    Isinj_hom (hom_injection_hom f) := by
+  intro y1 y2 h
+  apply Subtype.ext
+  exact h
 
--- 4. Prove the properties using your defined Isinj_hom and Issurj_hom predicates
+/-- 4. The image of a ring homomorphism defined as a Subring of B using the new architecture.
+       It explicitly pairs the injection mapping with its injectivity proof. -/
+def hom_image {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Subring (ImageType f) B where
+  hom := hom_injection_hom f
+  is_inj := hom_injection_is_inj f
+
+/-- 5. Bundle the surjection from A into the ImageType -/
+def hom_surjection_hom {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : RingHom A (ImageType f) where
+  toFun := fun x => ⟨f x, ⟨x, rfl⟩⟩
+  map_add := by intro x y; apply Subtype.ext; exact f.map_add x y
+  map_mul := by intro x y; apply Subtype.ext; exact f.map_mul x y
+  map_one := by apply Subtype.ext; exact f.map_one
+
 theorem hom_surjection_is_surj {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) :
     Issurj_hom (hom_surjection_hom f) := by
-  -- Let y be an element in the image, so y = ⟨b, ⟨a, ha⟩⟩
   intro ⟨b, ⟨a, ha⟩⟩
   use a
   apply Subtype.ext
   exact ha
 
-theorem hom_injection_is_inj {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) :
-    Isinj_hom (hom_injection_hom f) := by
-  intro y1 y2 h
-  -- h is exactly the equality of their underlying values in B
-  apply Subtype.ext
-  exact h
-
--- 5. The final decomposition: f(x) = inj(surj(x))
-theorem hom_decomposition {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) (a : A) :
-    f a = (hom_injection_hom f) ((hom_surjection_hom f) a) := by
+/-- 6. The final decomposition: f(x) = inj(surj(x)) -/
+theorem hom_decomposition {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) (a : A) : f a = (hom_injection_hom f) ((hom_surjection_hom f) a) := by
   rfl
-
 --f^* --
 def f_star (f:RingHom A B): Spectrum B → Spectrum A :=
   fun ⟨P,hP⟩ => ⟨ideal_contraction  f P, pideal_contraction_is_pideal f P hP⟩

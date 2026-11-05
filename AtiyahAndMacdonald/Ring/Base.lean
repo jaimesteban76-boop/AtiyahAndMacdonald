@@ -131,7 +131,7 @@ instance : HPow R Nat R where
   hPow := npow
 def IsNilpotent (a : R) : Prop :=
   ∃ n : Nat, a ^ n = (0 : R)
--- Bundles a subset of R with its closure properties
+/-- Bundles a subset of R with its closure properties
 structure Subring (R : Type) [CommutativeRing R] where
   carrier : Set R
   zero_mem : (0 : R) ∈ carrier
@@ -154,6 +154,7 @@ instance subring_is_ring {R : Type} [CommutativeRing R] (S : Subring R) : Commut
   mul_one := by intro a; apply Subtype.ext; apply CommutativeRing.mul_one
   mul_comm := by intro a b; apply Subtype.ext; apply CommutativeRing.mul_comm
   left_distrib := by intro a b c; apply Subtype.ext; apply CommutativeRing.left_distrib
+  -/
 
 def set_mul (A B : Set R) : Set R :=
   fun x => ∃ a b : R, a ∈ A ∧ b ∈ B ∧ a * b = x

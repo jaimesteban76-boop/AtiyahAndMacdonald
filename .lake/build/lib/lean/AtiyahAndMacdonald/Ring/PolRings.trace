@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["c4b610a2eda9e3ac.olean"],
+ {"o": ["6c6c5043ed0abd9b.olean"],
   "m": false,
-  "i": "78b72b5cac936352.ilean",
+  "i": "2cdc1114e5d01719.ilean",
   "c": "539dc0d3a3478f88.c"},
  "log":
  [{"message":
@@ -20,6 +20,12 @@
    "level": "warning"},
   {"message":
    "AtiyahAndMacdonald/Ring/PolRings.lean:59:9: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/PolRings.lean:127:65: Variable name `hI` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hI\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Ring/PolRings.lean:131:8: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -28,7 +34,7 @@
     ["imports",
      [["AtiyahAndMacdonald.Ring.Base transitive imports (legacy)",
        "083fd48f85f890fd"],
-      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "956bced9f2a65dd7"],
+      ["AtiyahAndMacdonald.Ring.Base:importAllArts", "c47763310dd7d10c"],
       ["AtiyahAndMacdonald.Nat.Nat_Stuff transitive imports (legacy)",
        "083fd48f85f890fd"],
       ["AtiyahAndMacdonald.Nat.Nat_Stuff:importAllArts",
@@ -41,10 +47,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\PolRings.lean",
-   "79ca1848fc875a05"],
+   "4e26210cde54cd50"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Ring.PolRings", "b2f6434759f3413b"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "8d31010d9d480238"}
+ "depHash": "ef7221981c9bee32"}

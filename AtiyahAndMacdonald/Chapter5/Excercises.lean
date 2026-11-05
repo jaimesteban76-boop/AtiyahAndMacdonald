@@ -4,7 +4,7 @@ variable {A B: Type} [CommutativeRing A] [CommutativeRing B]
 
 
 --Ex 1--
-theorem f_int_hom_closed_mapping (f: RingHom A B) (hf: integral_hom f)(b:Set B )(hb: IsIdeal b ):  f_star f '' (PrimeIdealsContaining b) = PrimeIdealsContaining (ideal_contraction f b):= by
+theorem f_int_hom_closed_mapping (f: RingHom A B) (hf: integral_hom f)(b: Set B )(hb: IsIdeal b ):  f_star f '' (PrimeIdealsContaining b) = PrimeIdealsContaining (ideal_contraction f b):= by
     ext p
     simp[PrimeIdealsContaining,f_star,ideal_contraction]
     constructor
@@ -14,7 +14,6 @@ theorem f_int_hom_closed_mapping (f: RingHom A B) (hf: integral_hom f)(b:Set B )
     rw[← hfq]
     apply hqb hx
     intro hp
-
     sorry
 
 --Ex 3--
