@@ -27,3 +27,55 @@ def adjoin_element (f : Subring A B) (x : B) : Set B :=
 /-- A ring homomorphism f : A → B is integral if B is integral over its subring f(A). -/
 def integral_hom (f : RingHom A B) : Prop :=
   IsIntegralRingExtension (hom_image f)
+
+/-- 1. Create a distinct Type for the integral closure using Lean's Subtype. -/
+def IntegralClosureType {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : Subring A B) : Type :=
+  { x : B // x ∈ IntegralClosure f }
+
+/-- 2. Equip this new Type with a CommutativeRing instance.
+    (Use `instance` instead of `def` so Lean automatically recognizes it as a ring). -/
+instance IntegralClosurering {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : Subring A B) :
+    CommutativeRing (IntegralClosureType f) where
+  add := by sorry
+  mul := by sorry
+  zero := by sorry
+  one := by sorry
+  neg := by sorry
+  add_assoc := by sorry
+  add_zero := by sorry
+  add_left_neg := by sorry
+  add_comm := by sorry
+  mul_assoc := by sorry
+  mul_one := by sorry
+  mul_comm := by sorry
+  left_distrib := by sorry
+
+/-- 3. Bundle the canonical inclusion from the IntegralClosure into B. -/
+def hom_integral_closure_to_B {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : Subring A B) :
+    RingHom (IntegralClosureType f) B where
+  toFun := fun x => x.val
+  map_add := by sorry
+  map_mul := by sorry
+  map_one := by sorry
+
+/-- 4. Package the integral closure as a Subring of B. -/
+def Subring_integral_closure {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : Subring A B) :
+    Subring (IntegralClosureType f) B where
+  hom := hom_integral_closure_to_B f
+  is_inj := by sorry
+
+/-- 5. Bundle the canonical injection from A into the IntegralClosure. -/
+def hom_A_to_integral_closure {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : Subring A B) :
+    RingHom A (IntegralClosureType f) where
+  toFun := fun a => ⟨f.hom a, by
+    -- You must prove that f(a) is integral over A (typically by using the polynomial x - a)
+    sorry⟩
+  map_add := by sorry
+  map_mul := by sorry
+  map_one := by sorry
+
+/-- 6. Package A as a Subring of the IntegralClosure. -/
+def Supring_integral_closure {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : Subring A B) :
+    Subring A (IntegralClosureType f) where
+  hom := hom_A_to_integral_closure f
+  is_inj := by sorry

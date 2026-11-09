@@ -179,6 +179,34 @@ theorem ideal_extension_surj_image_mem (f: RingHom A B) (I: Set A) (hI: IsIdeal 
   rw[f.map_mul,hm,hn,haw]
   exact Set.ofPred_subset.mpr fun x a => a
 
+theorem inj_iff_kernel {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Isinj_hom f ↔ kernel f = {0} := by
+  constructor
+  intro h_inj
+  ext x
+  simp [kernel]
+  constructor
+  intro hx
+  have heq : f x = f 0 := by rw [hx, zero_in_kernel f]
+  exact h_inj x 0 heq
+  intro hx
+  rw[hx]
+  exact zero_in_kernel f
+  intro h_ker a1 a2 heq
+  have h_in_ker : a1 + -a2 ∈ kernel f := by
+    simp [kernel]
+    rw [f.map_add, fneg_a_neg_fa, heq,add_comm, add_left_neg]
+  rw [h_ker] at h_in_ker
+  calc
+    a1= (a1)+ 0:= by rw[add_zero]
+    _= a1 + (-a2+a2):= by rw[add_left_neg]
+    _ = (a1 + -a2) + a2 := by rw[add_assoc]
+    _ = 0 + a2          := by rw [h_in_ker]
+    _= a2+0:= by rw[add_comm]
+    _ = a2              := by rw[add_zero]
+
+
+
+
 
 
 --Image of morphism is Subring--

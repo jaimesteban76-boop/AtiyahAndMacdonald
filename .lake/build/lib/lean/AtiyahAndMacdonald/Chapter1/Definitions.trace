@@ -18,7 +18,7 @@
        "083fd48f85f890fd"],
       ["AtiyahAndMacdonald.Ring.Base:importAllArts", "3c3bc904852f5e47"],
       ["AtiyahAndMacdonald.Ring.Base_Quotient transitive imports (legacy)",
-       "8a7236308fa4d833"],
+       "7c273e541897e3f0"],
       ["AtiyahAndMacdonald.Ring.Base_Quotient:importAllArts",
        "dcc6db954f6d8bfe"]]]]],
   ["libs",
@@ -35,4 +35,4 @@
   ["Module.name: AtiyahAndMacdonald.Chapter1.Definitions", "f3fdecfb9194d2d9"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "02590660d230daac"}
+ "depHash": "1f68da2de7873626"}

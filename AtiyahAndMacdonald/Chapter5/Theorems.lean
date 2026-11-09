@@ -12,7 +12,6 @@ variable {A B:Type} [CommutativeRing A][CommutativeRing B]
 --Proposition 5.6--
 
 theorem int_ring_over_quotientring_int_over (f:Subring A B) (b:Set B)(hb:IsIdeal b)(hi:IsIntegralRingExtension f ): IsIntegralRingExtension (Commutative_Diagrams f b hb):= by
-  intro y
   sorry
 --Going up--
 --Proposition 5.7--
@@ -23,6 +22,7 @@ theorem max_id_iff_max (f:Subring A B)(hi:IsIntegralRingExtension f ) (p: Set B)
   sorry
 --Cor 5.9--
 theorem same_contraction_same_id (f:Subring A B)(hi:IsIntegralRingExtension f ) (p: Set B) (hp: IsPrimeIdeal p)(p':Set B)(hp': IsPrimeIdeal p')(hpp': ideal_contraction f.1 p = ideal_contraction f.1 p'): p=p' := by
+
   sorry
 --Theorem 5.10--
 theorem chain_continuation (f:Subring A B) (hi:IsIntegralRingExtension f ) (p: Set A)(hp: IsPrimeIdeal p): ∃ q∈ Spectrum B, ideal_contraction f.1 q = p := by
@@ -31,6 +31,7 @@ theorem chain_continuation (f:Subring A B) (hi:IsIntegralRingExtension f ) (p: S
 
 --Going down--
 --Prop 5.12--
+
 --Prop 5.13--
 --Lemma 5.14--
 --Proposition 5.15--

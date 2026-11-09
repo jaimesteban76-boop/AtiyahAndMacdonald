@@ -116,3 +116,11 @@ theorem isMaximal_eq_IsMaximal (M:Set R): IsMaximalIdeal M ↔ isMaximalIdeal M 
 /-- Lemma: x ∈ r(I) ↔ x̄ ∈ Nilradical(R/I) -/
 theorem mem_radical_iff_quotient_nilradical (I : Set R) (hI : IsIdeal I) (x : R) : x ∈ Radical I ↔ quotient_pi_hom I hI x ∈ Nilradical (QuotientRing I hI) := by
   simp [Radical, Nilradical, IsNilpotent, hom_npow, ← ideal_is_kernel I hI, kernel]
+
+/--PrimeIdeal iff Integral Domain--/
+theorem PrimeIdeal_iff_Int_domain (p:Set R)(hp:IsIdeal p): IsPrimeIdeal p ↔ IsIntegralDomain (QuotientRing p hp) := by
+  sorry
+
+/--Maximal iff Field--/
+theorem Maximal_ideal_iff_Field (m:Set R)(hm: IsIdeal m): IsMaximalIdeal m ↔ IsField (QuotientRing m hm):= by
+  sorry

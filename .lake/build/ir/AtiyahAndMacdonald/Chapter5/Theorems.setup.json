@@ -1578,6 +1578,10 @@
   [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Module\\Base.olean"]],
   "AtiyahAndMacdonald.Chapter5.Definitions":
   [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter5\\Definitions.olean"]],
+  "AtiyahAndMacdonald.Chapter1.Theorems":
+  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Theorems.olean"]],
+  "AtiyahAndMacdonald.Chapter1.Definitions":
+  [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter1\\Definitions.olean"]],
   "Aesop.Util.UnorderedArraySet":
   [["C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Util\\UnorderedArraySet.olean",
     "C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Util\\UnorderedArraySet.olean.server",

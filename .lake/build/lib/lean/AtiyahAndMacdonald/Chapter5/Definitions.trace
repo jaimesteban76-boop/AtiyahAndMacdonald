@@ -1,14 +1,29 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["60ae14e825cf94ef.olean"],
+ {"o": ["e8d6810a5fe95fac.olean"],
   "m": false,
-  "i": "4e27e2deef3281a2.ilean",
-  "c": "96d58095db72858a.c"},
+  "i": "434ef8b751e879c9.ilean",
+  "c": "4b6f1ee405db4bbb.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean c:\\Users\\jaime\\.elan\\toolchains\\leanprover--lean4---v4.35.0-rc3\\bin\\lean.exe C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter5\\Definitions.lean -o C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter5\\Definitions.olean -i C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\lib\\lean\\AtiyahAndMacdonald\\Chapter5\\Definitions.ilean -c C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter5\\Definitions.c --setup C:\\Users\\jaime\\AtiyahAndMacdonald\\.lake\\build\\ir\\AtiyahAndMacdonald\\Chapter5\\Definitions.setup.json --json",
-   "level": "trace"}],
+   "level": "trace"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter5/Definitions.lean:37:9: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter5/Definitions.lean:54:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter5/Definitions.lean:62:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter5/Definitions.lean:68:4: declaration uses `sorry`",
+   "level": "warning"},
+  {"message":
+   "AtiyahAndMacdonald/Chapter5/Definitions.lean:78:4: declaration uses `sorry`",
+   "level": "warning"}],
  "inputs":
  [["deps",
    [["AtiyahAndMacdonald/AtiyahAndMacdonald:extraDep",
@@ -28,10 +43,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter5\\Definitions.lean",
-   "968d4ee413486de9"],
+   "9d9076481c1fdcfd"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Chapter5.Definitions", "e85cb29730232feb"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "c9e6ee010dc0cc6c"}
+ "depHash": "ca0af56e877aa91d"}
