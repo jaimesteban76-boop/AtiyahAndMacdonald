@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["1a79bc4dda234a66.olean"],
+ {"o": ["cf22ffe70f349b7a.olean"],
   "m": false,
-  "i": "29619418ffc472bf.ilean",
+  "i": "c002b41cb1a129bb.ilean",
   "c": "6a344230389b134e.c"},
  "log":
  [{"message":
@@ -28,13 +28,13 @@
    "AtiyahAndMacdonald/Ring/Base_Quotient.lean:140:6: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:143:6: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:159:6: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:160:4: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:176:4: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:171:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Ring/Base_Quotient.lean:187:8: declaration uses `sorry`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -47,7 +47,7 @@
       ["AtiyahAndMacdonald.Ring.Ring_Hom transitive imports (legacy)",
        "7a0b8bd2b7c802b1"],
       ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts",
-       "eb95d8c33e6490e2"]]]]],
+       "82f8bc9f1431ac42"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -56,10 +56,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Ring\\Base_Quotient.lean",
-   "3c9a1a61deb8ba80"],
+   "c8c83a9935dc3cd2"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Ring.Base_Quotient", "53f9853ad7efb3fa"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "f05a48ac937f861a"}
+ "depHash": "ba8d96937ca664cf"}

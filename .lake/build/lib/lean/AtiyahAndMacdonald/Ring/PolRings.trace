@@ -37,7 +37,7 @@
       ["AtiyahAndMacdonald.Ring.Base:importAllArts", "3c3bc904852f5e47"],
       ["AtiyahAndMacdonald.Ring.Ring_Hom transitive imports (legacy)",
        "7a0b8bd2b7c802b1"],
-      ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts", "c7bfef9f20794268"],
+      ["AtiyahAndMacdonald.Ring.Ring_Hom:importAllArts", "82f8bc9f1431ac42"],
       ["AtiyahAndMacdonald.Nat.Nat_Stuff transitive imports (legacy)",
        "083fd48f85f890fd"],
       ["AtiyahAndMacdonald.Nat.Nat_Stuff:importAllArts",
@@ -56,4 +56,4 @@
   ["Module.name: AtiyahAndMacdonald.Ring.PolRings", "b2f6434759f3413b"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "60b706a2f5e06e04"}
+ "depHash": "2ebc6cae4836af08"}

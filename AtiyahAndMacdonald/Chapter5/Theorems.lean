@@ -11,7 +11,7 @@ variable {A B:Type} [CommutativeRing A][CommutativeRing B]
 --Cor 5.5 --
 --Proposition 5.6--
 
-theorem int_ring_over_quotientring_int_over (f:Subring A B) (b:Set B)(hb:IsIdeal b)(hi:IsIntegralRingExtension f ): IsIntegralRingExtension (Commutative_Diagrams f b hb):= by
+theorem int_ring_over_quotientring_int_over (f:Subring A B) (b:Set B)(hb:IsIdeal b)(hi:IsIntegralRingExtension f ): IsIntegralRingExtension (Commutative_Diagrams f.1 b hb):= by
   sorry
 --Going up--
 --Proposition 5.7--

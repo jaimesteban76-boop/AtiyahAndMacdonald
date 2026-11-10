@@ -84,9 +84,9 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Chapter1.Definitions transitive imports (legacy)",
-       "f3c23a23b926228d"],
+       "ba0b0e5318035874"],
       ["AtiyahAndMacdonald.Chapter1.Definitions:importAllArts",
-       "5c28acf50b41fd44"]]]]],
+       "2335e947fb6b6ae4"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -101,4 +101,4 @@
   ["Module.name: AtiyahAndMacdonald.Chapter1.Theorems", "2d919134ffe11f28"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "a6b749e2527f0ec4"}
+ "depHash": "ef3a75555ec5abe7"}

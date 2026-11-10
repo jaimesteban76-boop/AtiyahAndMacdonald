@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["1db6791b0caf6a58.olean"],
+ {"o": ["0faf3f60a5f56471.olean"],
   "m": false,
-  "i": "a8d713d761010fb1.ilean",
+  "i": "c0cbe4c6822ec027.ilean",
   "c": "41ba6f63ecd014c1.c"},
  "log":
  [{"message":
@@ -13,13 +13,13 @@
    "AtiyahAndMacdonald/Chapter5/Theorems.lean:14:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter5/Theorems.lean:19:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter5/Theorems.lean:18:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter5/Theorems.lean:22:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter5/Theorems.lean:21:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
-   "AtiyahAndMacdonald/Chapter5/Theorems.lean:25:8: declaration uses `sorry`",
+   "AtiyahAndMacdonald/Chapter5/Theorems.lean:24:8: declaration uses `sorry`",
    "level": "warning"},
   {"message":
    "AtiyahAndMacdonald/Chapter5/Theorems.lean:28:8: declaration uses `sorry`",
@@ -30,14 +30,14 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Chapter5.Definitions transitive imports (legacy)",
-       "58acac7b7489a1c0"],
+       "015bb66fb2739042"],
       ["AtiyahAndMacdonald.Chapter5.Definitions:importAllArts",
-       "140d88530cacce42"],
+       "a3a3d35a623674cb"],
       ["AtiyahAndMacdonald.Module.Base transitive imports (legacy)",
        "7a0b8bd2b7c802b1"],
       ["AtiyahAndMacdonald.Module.Base:importAllArts", "6a7ff81231b8633a"],
       ["AtiyahAndMacdonald.Chapter1.Theorems transitive imports (legacy)",
-       "a2b184b36ba44187"],
+       "6ef0371608b88d2c"],
       ["AtiyahAndMacdonald.Chapter1.Theorems:importAllArts",
        "a9dc1014e0bca6d1"]]]]],
   ["libs",
@@ -48,10 +48,10 @@
   ["Lean 4.35.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4",
    "6e1b3f3248ad81dc"],
   ["C:\\Users\\jaime\\AtiyahAndMacdonald\\AtiyahAndMacdonald\\Chapter5\\Theorems.lean",
-   "74115b5db2d083a8"],
+   "415754b2032a4e75"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: AtiyahAndMacdonald.Chapter5.Theorems", "4c3507ca5174c6aa"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "caa0f93cbe80e30e"}
+ "depHash": "37afad3e94fe79bb"}

@@ -139,6 +139,22 @@ theorem prop_1_1_prime_correspondence (I : Set R) (hI : IsIdeal I) : ∀ J : Ide
 -- Forward direction helpers (phi)
 lemma mem_of_mem_phi (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) (x : R) (hx : quotient_pi_hom I hI x ∈ (phi I hI J).1) : x ∈ J.1 := by
   sorry
+/-- Element correspondence for prime ideals containing the kernel.--/
+lemma mem_image_quotient_pi_prime_iff {A : Type} [CommutativeRing A] (I : Set A) (hI : IsIdeal I) (p : Spectrum A) (hp : I ⊆ p.val) (y : A) : (quotient_pi_hom I hI y) ∈ (quotient_pi_hom I hI) '' p.val ↔ y ∈ p.val := by
+  simp[Spectrum,IsPrimeIdeal] at p
+  constructor
+  intro hy
+  have h : p.val ∈  IdealsContaining I := by
+    simp[IdealsContaining]
+    constructor
+    exact p.2.2.1
+    exact hp
+  let p_bundled : IdealsContaining I := ⟨p.val, h ⟩
+  apply mem_of_mem_phi I hI p_bundled y
+  change (quotient_pi_hom I hI).toFun y ∈ ideal_extension (quotient_pi_hom I hI) p.val
+  rw [← pideal_extension_surj_mem (quotient_pi_hom I hI) p (quotient_pi_surjective I hI)]
+  exact hy
+  exact fun a => Set.mem_image_of_mem (quotient_pi_hom I hI).toFun a
 
 lemma phi_prime (I : Set R) (hI : IsIdeal I) (J : IdealsContaining I) (h_prime : IsPrimeIdeal J.1) : IsPrimeIdeal (phi I hI J).1 := by
   sorry
@@ -172,6 +188,6 @@ theorem quotient_induced_hom_inj {A B : Type} [CommutativeRing A] [CommutativeRi
   sorry
 
 /-- 3. Package the homomorphism and the injectivity proof into the Subring structure.(Using f.hom to extract the RingHom from the Subring). -/
-def Commutative_Diagrams {A B : Type} [CommutativeRing A] [CommutativeRing B]  (f : Subring A B) (b : Set B) (hb : IsIdeal b) : Subring (QuotientRing (ideal_contraction f.1 b) (ideal_contraction_is_ideal f.1 b hb)) (QuotientRing b hb) where
-  hom := quotient_induced_hom f.hom b hb
-  is_inj := quotient_induced_hom_inj f.hom b hb
+def Commutative_Diagrams {A B : Type} [CommutativeRing A] [CommutativeRing B]  (f : RingHom A B) (b : Set B) (hb : IsIdeal b) : Subring (QuotientRing (ideal_contraction f b) (ideal_contraction_is_ideal f b hb)) (QuotientRing b hb) where
+  hom := quotient_induced_hom f b hb
+  is_inj := quotient_induced_hom_inj f b hb

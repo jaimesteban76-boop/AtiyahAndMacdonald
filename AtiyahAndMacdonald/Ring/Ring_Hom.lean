@@ -179,6 +179,11 @@ theorem ideal_extension_surj_image_mem (f: RingHom A B) (I: Set A) (hI: IsIdeal 
   rw[f.map_mul,hm,hn,haw]
   exact Set.ofPred_subset.mpr fun x a => a
 
+lemma pideal_extension_surj_mem (f:RingHom A B) (p: Spectrum A) (hf:Issurj_hom f): f '' p.val = ideal_extension f p.val := by
+  apply ideal_extension_surj_image_mem
+  exact p.2.2.1
+  exact hf
+
 theorem inj_iff_kernel {A B : Type} [CommutativeRing A] [CommutativeRing B] (f : RingHom A B) : Isinj_hom f ↔ kernel f = {0} := by
   constructor
   intro h_inj
@@ -279,4 +284,4 @@ theorem hom_decomposition {A B : Type} [CommutativeRing A] [CommutativeRing B] (
   rfl
 --f^* --
 def f_star (f:RingHom A B): Spectrum B → Spectrum A :=
-  fun ⟨P,hP⟩ => ⟨ideal_contraction  f P, pideal_contraction_is_pideal f P hP⟩
+  fun ⟨ P,hP⟩  => ⟨ideal_contraction  f P, pideal_contraction_is_pideal f P hP⟩

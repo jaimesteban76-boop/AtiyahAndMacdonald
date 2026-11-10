@@ -30,7 +30,7 @@
      [["@AtiyahAndMacdonald:extraDep", "00000000000006bb"]]],
     ["imports",
      [["AtiyahAndMacdonald.Ring.PolRings transitive imports (legacy)",
-       "e4da8fc3667210bf"],
+       "5c0501704e75108f"],
       ["AtiyahAndMacdonald.Ring.PolRings:importAllArts", "ce6470d3ad469d4b"],
       ["AtiyahAndMacdonald.Module.Base transitive imports (legacy)",
        "7a0b8bd2b7c802b1"],
@@ -49,4 +49,4 @@
   ["Module.name: AtiyahAndMacdonald.Chapter5.Definitions", "e85cb29730232feb"],
   ["Package.id?: (some AtiyahAndMacdonald)", "632a59f36dcb6f30"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "ca0af56e877aa91d"}
+ "depHash": "9b57408d4b402c8d"}
